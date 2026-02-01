@@ -1,0 +1,1026 @@
+{
+  "crawl_timestamp": "2026-02-01 14:52:51",
+  "functional_elements": [
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "sign in",
+      "href": "https://www.calculator.net/my-account/sign-in.php",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "span",
+      "text": "sin",
+      "href": null,
+      "id": null,
+      "action": "r('sin')"
+    },
+    {
+      "type": "span",
+      "text": "cos",
+      "href": null,
+      "id": null,
+      "action": "r('cos')"
+    },
+    {
+      "type": "span",
+      "text": "tan",
+      "href": null,
+      "id": null,
+      "action": "r('tan')"
+    },
+    {
+      "type": "input",
+      "text": "deg",
+      "href": null,
+      "id": "scirdsettingd",
+      "action": "cnDegreeRadians='degree';"
+    },
+    {
+      "type": "input",
+      "text": "rad",
+      "href": null,
+      "id": "scirdsettingr",
+      "action": "cnDegreeRadians='radians';"
+    },
+    {
+      "type": "span",
+      "text": "sin-1",
+      "href": null,
+      "id": null,
+      "action": "r('asin')"
+    },
+    {
+      "type": "span",
+      "text": "cos-1",
+      "href": null,
+      "id": null,
+      "action": "r('acos')"
+    },
+    {
+      "type": "span",
+      "text": "tan-1",
+      "href": null,
+      "id": null,
+      "action": "r('atan')"
+    },
+    {
+      "type": "span",
+      "text": "\u03c0",
+      "href": null,
+      "id": null,
+      "action": "r('pi')"
+    },
+    {
+      "type": "span",
+      "text": "e",
+      "href": null,
+      "id": null,
+      "action": "r('e')"
+    },
+    {
+      "type": "span",
+      "text": "xy",
+      "href": null,
+      "id": null,
+      "action": "r('pow')"
+    },
+    {
+      "type": "span",
+      "text": "x3",
+      "href": null,
+      "id": null,
+      "action": "r('x3')"
+    },
+    {
+      "type": "span",
+      "text": "x2",
+      "href": null,
+      "id": null,
+      "action": "r('x2')"
+    },
+    {
+      "type": "span",
+      "text": "ex",
+      "href": null,
+      "id": null,
+      "action": "r('ex')"
+    },
+    {
+      "type": "span",
+      "text": "10x",
+      "href": null,
+      "id": null,
+      "action": "r('10x')"
+    },
+    {
+      "type": "span",
+      "text": "y\u221ax",
+      "href": null,
+      "id": null,
+      "action": "r('apow')"
+    },
+    {
+      "type": "span",
+      "text": "3\u221ax",
+      "href": null,
+      "id": null,
+      "action": "r('3x')"
+    },
+    {
+      "type": "span",
+      "text": "\u221ax",
+      "href": null,
+      "id": null,
+      "action": "r('sqrt')"
+    },
+    {
+      "type": "span",
+      "text": "ln",
+      "href": null,
+      "id": null,
+      "action": "r('ln')"
+    },
+    {
+      "type": "span",
+      "text": "log",
+      "href": null,
+      "id": null,
+      "action": "r('log')"
+    },
+    {
+      "type": "span",
+      "text": "(",
+      "href": null,
+      "id": null,
+      "action": "r('(')"
+    },
+    {
+      "type": "span",
+      "text": ")",
+      "href": null,
+      "id": null,
+      "action": "r(')')"
+    },
+    {
+      "type": "span",
+      "text": "1/x",
+      "href": null,
+      "id": null,
+      "action": "r('1/x')"
+    },
+    {
+      "type": "span",
+      "text": "%",
+      "href": null,
+      "id": null,
+      "action": "r('pc')"
+    },
+    {
+      "type": "span",
+      "text": "n!",
+      "href": null,
+      "id": null,
+      "action": "r('n!')"
+    },
+    {
+      "type": "span",
+      "text": "7",
+      "href": null,
+      "id": null,
+      "action": "r(7)"
+    },
+    {
+      "type": "span",
+      "text": "8",
+      "href": null,
+      "id": null,
+      "action": "r(8)"
+    },
+    {
+      "type": "span",
+      "text": "9",
+      "href": null,
+      "id": null,
+      "action": "r(9)"
+    },
+    {
+      "type": "span",
+      "text": "+",
+      "href": null,
+      "id": null,
+      "action": "r('+')"
+    },
+    {
+      "type": "span",
+      "text": "Back",
+      "href": null,
+      "id": null,
+      "action": "r('bk')"
+    },
+    {
+      "type": "span",
+      "text": "4",
+      "href": null,
+      "id": null,
+      "action": "r(4)"
+    },
+    {
+      "type": "span",
+      "text": "5",
+      "href": null,
+      "id": null,
+      "action": "r(5)"
+    },
+    {
+      "type": "span",
+      "text": "6",
+      "href": null,
+      "id": null,
+      "action": "r(6)"
+    },
+    {
+      "type": "span",
+      "text": "\u2013",
+      "href": null,
+      "id": null,
+      "action": "r('-')"
+    },
+    {
+      "type": "span",
+      "text": "Ans",
+      "href": null,
+      "id": null,
+      "action": "r('ans')"
+    },
+    {
+      "type": "span",
+      "text": "1",
+      "href": null,
+      "id": null,
+      "action": "r(1)"
+    },
+    {
+      "type": "span",
+      "text": "2",
+      "href": null,
+      "id": null,
+      "action": "r(2)"
+    },
+    {
+      "type": "span",
+      "text": "3",
+      "href": null,
+      "id": null,
+      "action": "r(3)"
+    },
+    {
+      "type": "span",
+      "text": "\u00d7",
+      "href": null,
+      "id": null,
+      "action": "r('*')"
+    },
+    {
+      "type": "span",
+      "text": "M+",
+      "href": null,
+      "id": null,
+      "action": "r('M+')"
+    },
+    {
+      "type": "span",
+      "text": "0",
+      "href": null,
+      "id": null,
+      "action": "r(0)"
+    },
+    {
+      "type": "span",
+      "text": ".",
+      "href": null,
+      "id": null,
+      "action": "r('.')"
+    },
+    {
+      "type": "span",
+      "text": "EXP",
+      "href": null,
+      "id": null,
+      "action": "r('EXP')"
+    },
+    {
+      "type": "span",
+      "text": "/",
+      "href": null,
+      "id": null,
+      "action": "r('/')"
+    },
+    {
+      "type": "span",
+      "text": "M-",
+      "href": null,
+      "id": null,
+      "action": "r('M-')"
+    },
+    {
+      "type": "span",
+      "text": "\u00b1",
+      "href": null,
+      "id": null,
+      "action": "r('+/-')"
+    },
+    {
+      "type": "span",
+      "text": "RND",
+      "href": null,
+      "id": null,
+      "action": "r('RND')"
+    },
+    {
+      "type": "span",
+      "text": "AC",
+      "href": null,
+      "id": null,
+      "action": "r('C')"
+    },
+    {
+      "type": "span",
+      "text": "=",
+      "href": null,
+      "id": null,
+      "action": "r('=')"
+    },
+    {
+      "type": "span",
+      "text": "MR",
+      "href": null,
+      "id": "scimrc",
+      "action": "r('MR')"
+    },
+    {
+      "type": "span",
+      "text": "Search",
+      "href": null,
+      "id": "bluebtn",
+      "action": "return calcSearch();"
+    },
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/financial-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Financial Calculators",
+      "href": "https://www.calculator.net/financial-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Mortgage Calculator",
+      "href": "https://www.calculator.net/mortgage-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Loan Calculator",
+      "href": "https://www.calculator.net/loan-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Auto Loan Calculator",
+      "href": "https://www.calculator.net/auto-loan-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Interest Calculator",
+      "href": "https://www.calculator.net/interest-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Payment Calculator",
+      "href": "https://www.calculator.net/payment-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Retirement Calculator",
+      "href": "https://www.calculator.net/retirement-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Amortization Calculator",
+      "href": "https://www.calculator.net/amortization-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Investment Calculator",
+      "href": "https://www.calculator.net/investment-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Inflation Calculator",
+      "href": "https://www.calculator.net/inflation-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Finance Calculator",
+      "href": "https://www.calculator.net/finance-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Income Tax Calculator",
+      "href": "https://www.calculator.net/tax-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Compound Interest Calculator",
+      "href": "https://www.calculator.net/compound-interest-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Salary Calculator",
+      "href": "https://www.calculator.net/salary-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Interest Rate Calculator",
+      "href": "https://www.calculator.net/interest-rate-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Sales Tax Calculator",
+      "href": "https://www.calculator.net/sales-tax-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Fitness & Health Calculators",
+      "href": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "BMI Calculator",
+      "href": "https://www.calculator.net/bmi-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Calorie Calculator",
+      "href": "https://www.calculator.net/calorie-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Body Fat Calculator",
+      "href": "https://www.calculator.net/body-fat-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "BMR Calculator",
+      "href": "https://www.calculator.net/bmr-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Ideal Weight Calculator",
+      "href": "https://www.calculator.net/ideal-weight-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Pace Calculator",
+      "href": "https://www.calculator.net/pace-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Pregnancy Calculator",
+      "href": "https://www.calculator.net/pregnancy-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Pregnancy Conception Calculator",
+      "href": "https://www.calculator.net/pregnancy-conception-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Due Date Calculator",
+      "href": "https://www.calculator.net/due-date-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/math-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Math Calculators",
+      "href": "https://www.calculator.net/math-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Scientific Calculator",
+      "href": "https://www.calculator.net/scientific-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Fraction Calculator",
+      "href": "https://www.calculator.net/fraction-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Percentage Calculator",
+      "href": "https://www.calculator.net/percent-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Random Number Generator",
+      "href": "https://www.calculator.net/random-number-generator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Triangle Calculator",
+      "href": "https://www.calculator.net/triangle-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Standard Deviation Calculator",
+      "href": "https://www.calculator.net/standard-deviation-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/other-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Other Calculators",
+      "href": "https://www.calculator.net/other-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Age Calculator",
+      "href": "https://www.calculator.net/age-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Date Calculator",
+      "href": "https://www.calculator.net/date-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Time Calculator",
+      "href": "https://www.calculator.net/time-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Hours Calculator",
+      "href": "https://www.calculator.net/hours-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "GPA Calculator",
+      "href": "https://www.calculator.net/gpa-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Grade Calculator",
+      "href": "https://www.calculator.net/grade-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Concrete Calculator",
+      "href": "https://www.calculator.net/concrete-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Subnet Calculator",
+      "href": "https://www.calculator.net/ip-subnet-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Password Generator",
+      "href": "https://www.calculator.net/password-generator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "Conversion Calculator",
+      "href": "https://www.calculator.net/conversion-calculator.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "unnamed_element",
+      "href": "https://www.calculator.net/sitemap.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "about us",
+      "href": "https://www.calculator.net/about-us.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "sitemap",
+      "href": "https://www.calculator.net/sitemap.html",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "terms of use",
+      "href": "https://www.calculator.net/about-us.html#terms",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "privacy policy",
+      "href": "https://www.calculator.net/about-us.html#privacy",
+      "id": null,
+      "action": null
+    },
+    {
+      "type": "a",
+      "text": "calculator.net",
+      "href": "https://www.calculator.net/",
+      "id": null,
+      "action": null
+    }
+  ],
+  "state_transitions": [
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/my-account/sign-in.php",
+      "via": "sign in"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/financial-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/financial-calculator.html",
+      "via": "Financial Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/mortgage-calculator.html",
+      "via": "Mortgage Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/loan-calculator.html",
+      "via": "Loan Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/auto-loan-calculator.html",
+      "via": "Auto Loan Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/interest-calculator.html",
+      "via": "Interest Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/payment-calculator.html",
+      "via": "Payment Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/retirement-calculator.html",
+      "via": "Retirement Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/amortization-calculator.html",
+      "via": "Amortization Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/investment-calculator.html",
+      "via": "Investment Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/inflation-calculator.html",
+      "via": "Inflation Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/finance-calculator.html",
+      "via": "Finance Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/tax-calculator.html",
+      "via": "Income Tax Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/compound-interest-calculator.html",
+      "via": "Compound Interest Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/salary-calculator.html",
+      "via": "Salary Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/interest-rate-calculator.html",
+      "via": "Interest Rate Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sales-tax-calculator.html",
+      "via": "Sales Tax Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "via": "Fitness & Health Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/bmi-calculator.html",
+      "via": "BMI Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/calorie-calculator.html",
+      "via": "Calorie Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/body-fat-calculator.html",
+      "via": "Body Fat Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/bmr-calculator.html",
+      "via": "BMR Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/ideal-weight-calculator.html",
+      "via": "Ideal Weight Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pace-calculator.html",
+      "via": "Pace Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pregnancy-calculator.html",
+      "via": "Pregnancy Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pregnancy-conception-calculator.html",
+      "via": "Pregnancy Conception Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/due-date-calculator.html",
+      "via": "Due Date Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/math-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/math-calculator.html",
+      "via": "Math Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/scientific-calculator.html",
+      "via": "Scientific Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fraction-calculator.html",
+      "via": "Fraction Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/percent-calculator.html",
+      "via": "Percentage Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/random-number-generator.html",
+      "via": "Random Number Generator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/triangle-calculator.html",
+      "via": "Triangle Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/standard-deviation-calculator.html",
+      "via": "Standard Deviation Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/other-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/other-calculator.html",
+      "via": "Other Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/age-calculator.html",
+      "via": "Age Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/date-calculator.html",
+      "via": "Date Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/time-calculator.html",
+      "via": "Time Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/hours-calculator.html",
+      "via": "Hours Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/gpa-calculator.html",
+      "via": "GPA Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/grade-calculator.html",
+      "via": "Grade Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/concrete-calculator.html",
+      "via": "Concrete Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/ip-subnet-calculator.html",
+      "via": "Subnet Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/password-generator.html",
+      "via": "Password Generator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/conversion-calculator.html",
+      "via": "Conversion Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sitemap.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html",
+      "via": "about us"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sitemap.html",
+      "via": "sitemap"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html#terms",
+      "via": "terms of use"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html#privacy",
+      "via": "privacy policy"
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "source": "selenium_exploratory_crawler",
+    "generated_from": "data/crawl_results.json"
+  },
+  "page_context": {
+    "url": "https://www.calculator.net/",
+    "domain": "www.calculator.net",
+    "page_path": "/",
+    "ui_density": 107
+  },
+  "ui_inventory": {
+    "links": [
+      "Age Calculator",
+      "Amortization Calculator",
+      "Auto Loan Calculator",
+      "BMI Calculator",
+      "BMR Calculator",
+      "Body Fat Calculator",
+      "Calorie Calculator",
+      "Compound Interest Calculator",
+      "Concrete Calculator",
+      "Conversion Calculator",
+      "Date Calculator",
+      "Due Date Calculator",
+      "Finance Calculator",
+      "Financial Calculators",
+      "Fitness & Health Calculators",
+      "Fraction Calculator",
+      "GPA Calculator",
+      "Grade Calculator",
+      "Hours Calculator",
+      "Ideal Weight Calculator",
+      "Income Tax Calculator",
+      "Inflation Calculator",
+      "Interest Calculator",
+      "Interest Rate Calculator",
+      "Investment Calculator",
+      "Loan Calculator",
+      "Math Calculators",
+      "Mortgage Calculator",
+      "Other Calculators",
+      "Pace Calculator",
+      "Password Generator",
+      "Payment Calculator",
+      "Percentage Calculator",
+      "Pregnancy Calculator",
+      "Pregnancy Conception Calculator",
+      "Random Number Generator",
+      "Retirement Calculator",
+      "Salary Calculator",
+      "Sales Tax Calculator",
+      "Scientific Calculator",
+      "Standard Deviation Calculator",
+      "Subnet Calculator",
+      "Time Calculator",
+      "Triangle Calculator",
+      "about us",
+      "calculator.net",
+      "https://www.calculator.net/",
+      "https://www.calculator.net/financial-calculator.html",
+      "https://www.calculator.net/fitness-and-health-calculator.html",
+      "https://www.calculator.net/math-calculator.html",
+      "https://www.calculator.net/other-calculator.html",
+      "https://www.calculator.net/sitemap.html",
+      "privacy policy",
+      "sign in",
+      "sitemap",
+      "terms of use"
+    ],
+    "interactive_widgets": [
+      "%",
+      "(",
+      ")",
+      "+",
+      ".",
+      "/",
+      "0",
+      "1",
+      "1/x",
+      "10x",
+      "2",
+      "3",
+      "3\u221ax",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "=",
+      "AC",
+      "Ans",
+      "Back",
+      "EXP",
+      "M+",
+      "M-",
+      "MR",
+      "RND",
+      "Search",
+      "cos",
+      "cos-1",
+      "e",
+      "ex",
+      "ln",
+      "log",
+      "n!",
+      "sin",
+      "sin-1",
+      "tan",
+      "tan-1",
+      "x2",
+      "x3",
+      "xy",
+      "y\u221ax",
+      "\u00b1",
+      "\u00d7",
+      "\u03c0",
+      "\u2013",
+      "\u221ax"
+    ],
+    "inputs": [
+      "deg",
+      "rad"
+    ]
+  },
+  "available_actions": [
+    "navigate via links",
+    "enter data into input fields",
+    "interact with dynamic UI elements"
+  ],
+  "state_transitions": [
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/my-account/sign-in.php",
+      "via": "sign in"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/financial-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/financial-calculator.html",
+      "via": "Financial Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/mortgage-calculator.html",
+      "via": "Mortgage Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/loan-calculator.html",
+      "via": "Loan Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/auto-loan-calculator.html",
+      "via": "Auto Loan Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/interest-calculator.html",
+      "via": "Interest Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/payment-calculator.html",
+      "via": "Payment Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/retirement-calculator.html",
+      "via": "Retirement Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/amortization-calculator.html",
+      "via": "Amortization Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/investment-calculator.html",
+      "via": "Investment Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/inflation-calculator.html",
+      "via": "Inflation Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/finance-calculator.html",
+      "via": "Finance Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/tax-calculator.html",
+      "via": "Income Tax Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/compound-interest-calculator.html",
+      "via": "Compound Interest Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/salary-calculator.html",
+      "via": "Salary Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/interest-rate-calculator.html",
+      "via": "Interest Rate Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sales-tax-calculator.html",
+      "via": "Sales Tax Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
+      "via": "Fitness & Health Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/bmi-calculator.html",
+      "via": "BMI Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/calorie-calculator.html",
+      "via": "Calorie Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/body-fat-calculator.html",
+      "via": "Body Fat Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/bmr-calculator.html",
+      "via": "BMR Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/ideal-weight-calculator.html",
+      "via": "Ideal Weight Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pace-calculator.html",
+      "via": "Pace Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pregnancy-calculator.html",
+      "via": "Pregnancy Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/pregnancy-conception-calculator.html",
+      "via": "Pregnancy Conception Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/due-date-calculator.html",
+      "via": "Due Date Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/math-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/math-calculator.html",
+      "via": "Math Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/scientific-calculator.html",
+      "via": "Scientific Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/fraction-calculator.html",
+      "via": "Fraction Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/percent-calculator.html",
+      "via": "Percentage Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/random-number-generator.html",
+      "via": "Random Number Generator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/triangle-calculator.html",
+      "via": "Triangle Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/standard-deviation-calculator.html",
+      "via": "Standard Deviation Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/other-calculator.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/other-calculator.html",
+      "via": "Other Calculators"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/age-calculator.html",
+      "via": "Age Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/date-calculator.html",
+      "via": "Date Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/time-calculator.html",
+      "via": "Time Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/hours-calculator.html",
+      "via": "Hours Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/gpa-calculator.html",
+      "via": "GPA Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/grade-calculator.html",
+      "via": "Grade Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/concrete-calculator.html",
+      "via": "Concrete Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/ip-subnet-calculator.html",
+      "via": "Subnet Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/password-generator.html",
+      "via": "Password Generator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/conversion-calculator.html",
+      "via": "Conversion Calculator"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sitemap.html",
+      "via": "unnamed_element"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html",
+      "via": "about us"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/sitemap.html",
+      "via": "sitemap"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html#terms",
+      "via": "terms of use"
+    },
+    {
+      "from": "https://www.calculator.net/",
+      "to": "https://www.calculator.net/about-us.html#privacy",
+      "via": "privacy policy"
+    }
+  ],
+  "exploration_hints": {
+    "focus_areas": [
+      "form validation",
+      "navigation consistency",
+      "dynamic UI behavior",
+      "error handling"
+    ],
+    "unknown_risks": [
+      "authentication flows",
+      "hidden UI states",
+      "async race conditions"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "nodes": {
+    "fa5b563fafd457358165f0dfcd9d21de": {
+      "url": "https://www.calculator.net/",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "c2cefc5f26c6e6661fc0308e04c39e91"
+        }
+      ]
+    },
+    "c2cefc5f26c6e6661fc0308e04c39e91": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "7a9f104317aae836a0a8927c50d68d1a"
+        }
+      ]
+    },
+    "b10f1ca4d973be53b2f0d7b5bc9bf32c": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "f0f24d10c195f3aae28c1f1b625aa61f"
+        }
+      ]
+    },
+    "f0f24d10c195f3aae28c1f1b625aa61f": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "edc3e549ec1bf6ffa092084e92364866"
+        }
+      ]
+    },
+    "edc3e549ec1bf6ffa092084e92364866": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "9dd1d533cc2dc06971dac5b76c23c01d"
+        }
+      ]
+    },
+    "9dd1d533cc2dc06971dac5b76c23c01d": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "75882b6cc0c6cdf3462b8265f2921003"
+        }
+      ]
+    },
+    "75882b6cc0c6cdf3462b8265f2921003": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "6d3bcb94d03e9efd2b63f6c5a854bdae"
+        }
+      ]
+    },
+    "6d3bcb94d03e9efd2b63f6c5a854bdae": {
+      "url": "https://www.calculator.net/my-account/sign-in.php",
+      "edges": [
+        {
+          "via": "unnamed",
+          "to": "fa5b563fafd457358165f0dfcd9d21de"
+        },
+        {
+          "via": "sign in",
+          "to": "98c535ef928e6ae99a5c2eeca413f404"
+        },
+        {
+          "via": "sin",
+          "to": "b7726ee610e9250e925387d0d88462ca"
+        }
+      ]
+    }
+  }
+}

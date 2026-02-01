@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "crawled_at": "2026-01-20 13:08:43"
+  },
+  "clickables_found": [
+    {
+      "element_type": "link",
+      "element_info": {
+        "tag": "a",
+        "text": "Create one!",
+        "id": "signup",
+        "name": "",
+        "href": "https://login.live.com/oauth20_authorize.srf?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3a%2f%2foutlook.office.com%2f.default+openid+profile+offline_access&redirect_uri=https%3a%2f%2foutlook.office.com%2fmail%2f&response_type=code&state=eyJpZCI6IjAxOWJkYTU3LTgxMmUtN2IzZC04MTQ2LTg4MWYwMzJiNmJjZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3d%7caHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&response_mode=fragment&nonce=019bda57-812e-78be-ad66-14e8c3730e2b&code_challenge=bygH3vbkDWF0d0rwCciidmkllTfUSlK0StZbgHhzB-o&code_challenge_method=S256&x-client-SKU=msal.js.browser&x-client-Ver=4.26.0&uaid=7c883853620f6e1fef2405e3f71c8f18&msproxy=1&issuer=mso&tenant=common&ui_locales=en-US&client_info=1&signup=1&lw=1&fl=easi2&epctrc=AT1rqQH6TGz2KooPKDD468luzDiJWbciPVwPGkmnmcI%3d0%3a1%3aCANARY%3amdME1vMwu6vYq%2fAISZJ1Qb63a3l57NGUOC8Dxcl7grg%3d&epct=PAQABDgEAAACvnsHKEvvRQb3Bz3Qc7wnakEw2warGPcgSAzwbn0uav0BGGRB2hqo7KS7ePGofYmRNyKx2SVGPHst3aCpPyUViUsZMjdatZWrfdjaoIDzn9mhKO5szOqVpxrVhHyln4xP28RmPY2ZUak0hJQRU9OMAka4cfkpITaFJ5kcTLNXlI6OWtlyFsixGS94YzpWnoPEmg2uwO8GFudMbHXoMo9PHo_rbnCJvar3dPlbqXdbS_CAA&jshs=0&claims=%7b%22access_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d",
+        "position": {
+          "x": 578,
+          "y": 272
+        },
+        "size": {
+          "width": 66,
+          "height": 18
+        }
+      },
+      "navigation_result": "same_page",
+      "before_state": {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=7c883853-620f-6e1f-ef24-05e3f71c8f18&response_mode=fragment&client_info=1&prompt=select_account&nonce=019bda57-812e-78be-ad66-14e8c3730e2b&state=eyJpZCI6IjAxOWJkYTU3LTgxMmUtN2IzZC04MTQ2LTg4MWYwMzJiNmJjZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.26.0&response_type=code&code_challenge=4WKFe03OGQsrbsa5P7g52YXC6OURobzcF5Nb5_1KcKw&code_challenge_method=S256",
+        "title": "Sign in to your account"
+      },
+      "after_state": {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=7c883853-620f-6e1f-ef24-05e3f71c8f18&response_mode=fragment&client_info=1&prompt=select_account&nonce=019bda57-812e-78be-ad66-14e8c3730e2b&state=eyJpZCI6IjAxOWJkYTU3LTgxMmUtN2IzZC04MTQ2LTg4MWYwMzJiNmJjZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.26.0&response_type=code&code_challenge=4WKFe03OGQsrbsa5P7g52YXC6OURobzcF5Nb5_1KcKw&code_challenge_method=S256",
+        "title": "Sign in to your account"
+      },
+      "timestamp": "13:09:13",
+      "success": true
+    },
+    {
+      "element_type": "link",
+      "element_info": {
+        "tag": "a",
+        "text": "Create one!",
+        "id": "signup",
+        "name": "",
+        "href": "https://login.live.com/oauth20_authorize.srf?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3a%2f%2foutlook.office.com%2f.default+openid+profile+offline_access&redirect_uri=https%3a%2f%2foutlook.office.com%2fmail%2f&response_type=code&state=eyJpZCI6IjAxOWJkYTU3LTgxMmUtN2IzZC04MTQ2LTg4MWYwMzJiNmJjZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3d%7caHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&response_mode=fragment&nonce=019bda57-812e-78be-ad66-14e8c3730e2b&code_challenge=bygH3vbkDWF0d0rwCciidmkllTfUSlK0StZbgHhzB-o&code_challenge_method=S256&x-client-SKU=msal.js.browser&x-client-Ver=4.26.0&uaid=7c883853620f6e1fef2405e3f71c8f18&msproxy=1&issuer=mso&tenant=common&ui_locales=en-US&client_info=1&signup=1&lw=1&fl=easi2&epctrc=AT1rqQH6TGz2KooPKDD468luzDiJWbciPVwPGkmnmcI%3d4%3a1%3aCANARY%3aEEaPiSKK%2bo2iXFBTq7WuaoNlwhwzQG7QJm0s9cpt0TA%3d&epct=PAQABDgEAAACvnsHKEvvRQb3Bz3Qc7wnaLvKzFJQsqWXnIBQg437PMIq4QTBNoD0GNDQwE_4dFOzl3NE0vGRpU2RkSFCh2YWPK5AgZ97SyptjJbGVVLlHAteCi6f7TVq4oGlK0vFbjUTwCS5JzmfC5ZcacVk8o7sbV1wByKbSC1a8_QoMmNidgPBIpzhzeIwS0PzuDoLSxc6-EtzR82xJ-vPADxLJfF_k0j_PGFfNLTEsXehe8ndZXCAA&jshs=0&claims=%7b%22access_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d",
+        "position": {
+          "x": 578,
+          "y": 272
+        },
+        "size": {
+          "width": 66,
+          "height": 18
+        }
+      },
+      "navigation_result": "new_page",
+      "before_state": {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=7c883853-620f-6e1f-ef24-05e3f71c8f18&response_mode=fragment&client_info=1&prompt=select_account&nonce=019bda57-812e-78be-ad66-14e8c3730e2b&state=eyJpZCI6IjAxOWJkYTU3LTgxMmUtN2IzZC04MTQ2LTg4MWYwMzJiNmJjZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.26.0&response_type=code&code_challenge=4WKFe03OGQsrbsa5P7g52YXC6OURobzcF5Nb5_1KcKw&code_challenge_method=S256",
+        "title": "Sign in to your account"
+      },
+      "after_state": {
+        "url": "https://login.live.com/ppsecure/post.srf?client_id=9199bf20-a13f-4107-85dc-02114787ef48&uaid=7c883853620f6e1fef2405e3f71c8f18&pid=15216&opid=132196EEC0FAAD2D&route=C533_BL2",
+        "title": "Stay signed in?"
+      },
+      "timestamp": "13:09:18",
+      "success": true
+    },
+    {
+      "element_type": "button",
+      "element_info": {
+        "tag": "button",
+        "id": "O365_MainLink_NavMenu",
+        "name": "",
+        "classes": [
+          "clgiLVKPzugZZns0LiPTqw==",
+          "o365sx-button",
+          "o365sx-waffle"
+        ],
+        "input_type": "button",
+        "role": "button",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "width": 48,
+          "height": 48
+        }
+      },
+      "navigation_result": "same_page",
+      "before_state": {
+        "url": "https://outlook.live.com/mail/0/?login_hint=M%24Ejp4nONYuP9ow4Wjr5YICsmkJZZkZOYmZhalJeYl5hVYGlg6pAO5OXrJ-bkSl35umvz7PxAwAgBX0Riy",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "after_state": {
+        "url": "https://outlook.live.com/mail/0/?login_hint=M%24Ejp4nONYuP9ow4Wjr5YICsmkJZZkZOYmZhalJeYl5hVYGlg6pAO5OXrJ-bkSl35umvz7PxAwAgBX0Riy",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "timestamp": "13:09:32",
+      "success": true
+    },
+    {
+      "element_type": "button",
+      "element_info": {
+        "tag": "button",
+        "text": "\nMeet Now",
+        "id": "",
+        "name": "",
+        "classes": [
+          "ms-Button",
+          "WxYUF",
+          "ms-Button--commandBar",
+          "root-260"
+        ],
+        "input_type": "button",
+        "position": {
+          "x": 893,
+          "y": 0
+        },
+        "size": {
+          "width": 115,
+          "height": 48
+        }
+      },
+      "navigation_result": "same_page",
+      "before_state": {
+        "url": "https://outlook.live.com/mail/0/?login_hint=M%24Ejp4nONYuP9ow4Wjr5YICsmkJZZkZOYmZhalJeYl5hVYGlg6pAO5OXrJ-bkSl35umvz7PxAwAgBX0Riy",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "after_state": {
+        "url": "https://outlook.live.com/mail/0/?login_hint=M%24Ejp4nONYuP9ow4Wjr5YICsmkJZZkZOYmZhalJeYl5hVYGlg6pAO5OXrJ-bkSl35umvz7PxAwAgBX0Riy",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "timestamp": "13:09:35",
+      "success": true
+    },
+    {
+      "element_type": "button",
+      "element_info": {
+        "tag": "button",
+        "id": "",
+        "name": "",
+        "classes": [
+          "nUPgy"
+        ],
+        "input_type": "submit",
+        "role": "button",
+        "position": {
+          "x": 1016,
+          "y": 0
+        },
+        "size": {
+          "width": 48,
+          "height": 48
+        }
+      },
+      "navigation_result": "new_page",
+      "before_state": {
+        "url": "https://outlook.live.com/mail/0/?login_hint=M%24Ejp4nONYuP9ow4Wjr5YICsmkJZZkZOYmZhalJeYl5hVYGlg6pAO5OXrJ-bkSl35umvz7PxAwAgBX0Riy",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "after_state": {
+        "url": "https://outlook.live.com/mail/0/",
+        "title": "Mail - FATHIMA IRFANA - Outlook"
+      },
+      "timestamp": "13:09:37",
+      "success": true
+    }
+  ],
+  "navigation_flows": [
+    {
+      "from": "https://outlook.office.com/mail/",
+      "to": "new_page",
+      "via": "Create one!",
+      "element_type": "link"
+    }
+  ],
+  "crawl_issues": [
+    {
+      "type": "Crawl loop error",
+      "details": "'text'",
+      "timestamp": "13:09:39",
+      "url": "https://outlook.live.com/mail/0/"
+    }
+  ],
+  "summary": {
+    "total_clickables": 0,
+    "crawled": 5,
+    "failed": 0
+  }
+}

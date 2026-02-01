@@ -1,0 +1,20 @@
+{
+    "static": {},
+    "spa": {
+        "https://outlook.office.com/": []
+    },
+    "api": {
+        "https://outlook.office.com/": [
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.31586.m.a5628979.js",
+            "https://aadcdn.msftauth.net/ests/2.1/content/cdnbundles/converged.v2.login.min_kptqschdvwnh6yq41ngsjw2.css",
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.MsalAuth.m.70414905.js",
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.AppBoot.m.56324267.js",
+            "https://logincdn.msauth.net/16.000/Converged_v21033_mG-wAdV--_sq1kXms675SA2.css",
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.15509.m.c29b4020.js",
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.19444.m.8e3ccd6e.js",
+            "https://res.public.onecdn.static.microsoft/owamail/hashed-v1/scripts/owa.mailindex.07300fe4.js",
+            "https://browser.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&client-id=NO_AUTH&client-version=1DS-Web-JS-3.2.6&apikey=69adc3c768bd4dc08c19416121249fcc-66f1668a-797b-4249-95e3-6c6651768c28-7293&upload-time=1768540986970&time-delta-to-apply-millis=3257&w=0&NoResponseBody=true",
+            "https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2FoauthRedirect.html&client-request-id=e958f6e8-1850-dc43-ebc4-8425747994c1&response_mode=fragment&client_info=1&prompt=none&nonce=019bc541-972f-763b-b5a0-5ebe478ba1cd&state=eyJpZCI6IjAxOWJjNTQxLTk3MmUtN2E1ZC04NTYyLTExMDhmYTY0MGU3MSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoic2lsZW50In19%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.26.0&response_type=code&code_challenge=pOn0YSv2VUmCkNXuL2mX-RXUxFyVV6d29xStzeVEugk&code_challenge_method=S256"
+        ]
+    }
+}

@@ -1,0 +1,81 @@
+{
+  "generated_tests": [
+    {
+      "id": "ET-01",
+      "goal": "Explore switching between degree and radian modes during calculation",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Ensure calculator is in degree mode",
+        "Enter sin(90)",
+        "Toggle calculator mode to radian without clearing input",
+        "Press '='",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator handles mode switching gracefully or displays a clear error"
+    },
+    {
+      "id": "ET-02",
+      "goal": "Verify interrupting user flow by navigating during input",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Enter sin(90)",
+        "Navigate to the BMI Calculator page while input is still present",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator handles interrupted user flow gracefully or displays a clear error"
+    },
+    {
+      "id": "ET-03",
+      "goal": "Explore reusing UI state across actions",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Enter sin(90)",
+        "Navigate to the Math Calculators page",
+        "Enter sin(90) again",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator reuses UI state correctly or displays a clear error"
+    },
+    {
+      "id": "ET-04",
+      "goal": "Test edge-case sequence: switching between degree and radian modes multiple times",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Ensure calculator is in degree mode",
+        "Enter sin(90)",
+        "Toggle calculator mode to radian without clearing input",
+        "Press '='",
+        "Toggle calculator mode to degree without clearing input",
+        "Press '='",
+        "Toggle calculator mode to radian without clearing input",
+        "Press '='",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator handles multiple mode switches gracefully or displays a clear error"
+    },
+    {
+      "id": "ET-05",
+      "goal": "Explore interrupting user flow by interacting with dynamic UI elements during input",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Enter sin(90)",
+        "Interact with the Search button while input is still present",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator handles interrupted user flow gracefully or displays a clear error"
+    },
+    {
+      "id": "ET-06",
+      "goal": "Verify calculator handles invalid input correctly when switching between degree and radian modes",
+      "steps": [
+        "Navigate to the Scientific Calculator page",
+        "Ensure calculator is in degree mode",
+        "Enter invalid input (e.g. 'abc')",
+        "Toggle calculator mode to radian without clearing input",
+        "Press '='",
+        "Observe displayed result or error behavior"
+      ],
+      "expected": "Calculator displays a clear error message or handles invalid input correctly"
+    }
+  ]
+}
