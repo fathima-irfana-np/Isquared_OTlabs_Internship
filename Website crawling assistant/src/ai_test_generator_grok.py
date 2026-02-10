@@ -2,7 +2,7 @@ import json
 import requests
 import os
 
-GROQ_API_KEY = #your key here,noww
+GROQ_API_KEY = ""
 GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = "llama-3.1-8b-instant"
 

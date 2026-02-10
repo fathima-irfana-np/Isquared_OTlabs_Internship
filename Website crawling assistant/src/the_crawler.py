@@ -72,7 +72,7 @@ def crawl_site():
         
         raw_elements = find_all_elements(driver, selectors)
         
-        print(f"Found {len(raw_elements)} potential elements including iframes. Starting exploration...")
+        print(f"Found {len(raw_elements)} potential elements. Starting exploration...")
         
         for i in range(len(raw_elements)):
           

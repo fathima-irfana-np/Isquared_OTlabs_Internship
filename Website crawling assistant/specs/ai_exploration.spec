@@ -52,4 +52,3 @@
 * Toggle calculator mode to radian without clearing input
 * Press '='
 * Observe displayed result or error behavior
-
