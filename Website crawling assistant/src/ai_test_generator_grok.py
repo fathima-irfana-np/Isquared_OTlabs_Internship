@@ -1,8 +1,10 @@
 import json
 import requests
 import os
+import dotenv
 
-GROQ_API_KEY = ""
+dotenv.load_dotenv()
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = "llama-3.1-8b-instant"
 
@@ -10,7 +12,7 @@ INPUT_FILE = "data/ai_exploration_snapshot.json"
 OUTPUT_FILE = "data/generated_test_cases.json"
 
 MAX_PROMPT_CHARS = 8000
-MAX_TOKENS = 3000 # Increased to prevent truncated JSON
+MAX_TOKENS = 3000 
 
 def repair_json_structure(json_str):
     """
@@ -125,7 +127,7 @@ def main():
     try:
         final_json = json.loads(raw_json)
     except json.JSONDecodeError:
-        print("⚠️ Detected malformed JSON, attempting repair...")
+        print("Detected malformed JSON, attempting repair...")
         repaired = repair_json_structure(raw_json)
         final_json = json.loads(repaired)
 

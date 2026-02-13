@@ -9,7 +9,6 @@ OUTPUT_FILE = "data/ai_exploration_snapshot.json"
 def normalize_text(text):
     return text.strip() if text and text != "unnamed_element" else None
 
-
 def classify_elements(elements):
     ui_groups = defaultdict(list)
 

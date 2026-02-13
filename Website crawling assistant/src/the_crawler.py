@@ -107,7 +107,6 @@ def crawl_site():
     finally:
         driver.quit()
 
-    # Save to JSON
     filename = "data/crawl_results.json"
     with open(filename, "w") as f:
         json.dump(results, f, indent=2)
