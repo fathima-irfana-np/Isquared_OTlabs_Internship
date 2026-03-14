@@ -1,112 +1,215 @@
 import json
+import os
 from collections import defaultdict
 from urllib.parse import urlparse
 
 INPUT_FILE = "data/crawl_results.json"
 OUTPUT_FILE = "data/ai_exploration_snapshot.json"
 
+MAX_LINKS_PER_PAGE = 20
 
-def normalize_text(text):
-    return text.strip() if text and text != "unnamed_element" else None
 
-def classify_elements(elements):
+# -------------------------------------------------
+# Utilities
+# -------------------------------------------------
+
+def clean_label(label):
+    if not label:
+        return None
+
+    label = label.strip()
+
+    if label.lower() in ["unnamed", "unnamed_element"]:
+        return None
+
+    # Remove extremely long noisy labels (graphs, blocks)
+    if len(label) > 120:
+        return None
+
+    # Remove pure symbol junk except common UI controls
+    if len(label) == 1 and label not in ["=", "+", "-", "*", "/"]:
+        return None
+
+    return label
+
+
+def is_anchor_link(href):
+    return href.endswith("#") if href else False
+
+
+def is_external_link(href, domain):
+    if not href:
+        return False
+    parsed = urlparse(href)
+    return parsed.netloc and parsed.netloc != domain
+
+
+def meaningful_element(label, el_id, name):
+    return any([label, el_id, name])
+
+
+# -------------------------------------------------
+# Classification
+# -------------------------------------------------
+
+def classify_elements(elements, page_domain):
     ui_groups = defaultdict(list)
+    seen_links = set()
 
     for el in elements:
         tag = el.get("type")
-        text = normalize_text(el.get("text"))
+        role = el.get("role")
         href = el.get("href")
         el_id = el.get("id")
-        action = el.get("action")
+        name = el.get("name")
+        validation = el.get("validation", {})
 
+        label = clean_label(el.get("label"))
+
+        if not meaningful_element(label, el_id, name):
+            continue
+
+        final_label = label or el_id or name
+
+        el_repr = {
+            "type": tag,
+            "role": role,
+            "label": final_label
+        }
+
+        # Keep meaningful validation only
+        if validation:
+            filtered_validation = {
+                k: v for k, v in validation.items()
+                if v not in [None, "", False]
+            }
+            if filtered_validation:
+                el_repr["validation"] = filtered_validation
+
+        # ---------------- LINKS ----------------
         if href:
-            ui_groups["links"].append(text or href)
-        elif tag == "button":
-            ui_groups["buttons"].append(text or el_id)
-        elif tag == "input":
-            ui_groups["inputs"].append(text or el_id)
-        elif action:
-            ui_groups["interactive_widgets"].append(text or el_id)
-        else:
-            ui_groups["unknown_clickables"].append(text or el_id)
+            if is_external_link(href, page_domain):
+                continue
 
-    for k in ui_groups:
-        ui_groups[k] = sorted(set(filter(None, ui_groups[k])))
+            if is_anchor_link(href):
+                continue
+
+            if href in seen_links:
+                continue
+
+            seen_links.add(href)
+            el_repr["href"] = href
+            ui_groups["links"].append(el_repr)
+
+        # ---------------- BUTTONS ----------------
+        elif tag == "button" or role == "action":
+            ui_groups["buttons"].append(el_repr)
+
+        # ---------------- INPUTS ----------------
+        elif tag == "input" and role in ["form_input", "selection"]:
+            ui_groups["inputs"].append(el_repr)
+
+        # ---------------- DROPDOWNS ----------------
+        elif tag == "select":
+            ui_groups["dropdowns"].append(el_repr)
+
+        # Ignore svg/visual-only elements
+        elif tag in ["svg", "path", "g"]:
+            continue
+
+        else:
+            ui_groups["other_clickables"].append(el_repr)
+
+    # Limit excessive navigation links
+    if "links" in ui_groups:
+        ui_groups["links"] = ui_groups["links"][:MAX_LINKS_PER_PAGE]
 
     return dict(ui_groups)
 
 
-def infer_page_context(functional_elements, state_transitions):
-    urls = [t["from"] for t in state_transitions] if state_transitions else []
-    base_url = urls[0] if urls else "unknown"
+# -------------------------------------------------
+# Page Intelligence (Domain Agnostic)
+# -------------------------------------------------
 
-    parsed = urlparse(base_url)
+def infer_page_type(inputs_count, buttons_count, links_count):
+    if inputs_count >= 3:
+        return "form-heavy"
 
-    return {
-        "url": base_url,
-        "domain": parsed.netloc,
-        "page_path": parsed.path or "/",
-        "ui_density": len(functional_elements)
-    }
+    if buttons_count >= 3 and inputs_count > 0:
+        return "interactive"
+
+    if links_count > inputs_count:
+        return "navigation-heavy"
+
+    return "content"
 
 
-def derive_available_actions(ui_groups):
-    actions = []
+def compute_interaction_score(ui_groups):
+    score = 0
+    score += len(ui_groups.get("inputs", [])) * 3
+    score += len(ui_groups.get("dropdowns", [])) * 2
+    score += len(ui_groups.get("buttons", [])) * 2
+    return score
 
-    if ui_groups.get("links"):
-        actions.append("navigate via links")
 
-    if ui_groups.get("buttons"):
-        actions.append("trigger button actions")
-
-    if ui_groups.get("inputs"):
-        actions.append("enter data into input fields")
-
-    if ui_groups.get("interactive_widgets"):
-        actions.append("interact with dynamic UI elements")
-
-    return actions
-
+# -------------------------------------------------
+# Main
+# -------------------------------------------------
 
 def main():
-    with open(INPUT_FILE, "r") as f:
+    if not os.path.exists(INPUT_FILE):
+        print(f"Error: {INPUT_FILE} not found.")
+        return
+
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
         crawl_data = json.load(f)
 
-    functional_elements = crawl_data.get("functional_elements", [])
-    state_transitions = crawl_data.get("state_transitions", [])
+    pages = crawl_data.get("pages", [])
+    enriched_pages = []
 
-    ui_inventory = classify_elements(functional_elements)
-    page_context = infer_page_context(functional_elements, state_transitions)
-    available_actions = derive_available_actions(ui_inventory)
+    for page in pages:
+        url = page.get("page_url", "")
+        title = page.get("page_title", "")
+        parsed = urlparse(url)
+        domain = parsed.netloc
+
+        raw_elements = page.get("elements", [])
+        ui_inventory = classify_elements(raw_elements, domain)
+
+        inputs_count = len(ui_inventory.get("inputs", []))
+        buttons_count = len(ui_inventory.get("buttons", []))
+        links_count = len(ui_inventory.get("links", []))
+
+        page_type = infer_page_type(inputs_count, buttons_count, links_count)
+        interaction_score = compute_interaction_score(ui_inventory)
+
+        enriched_pages.append({
+            "page_context": {
+                "url": url,
+                "title": title,
+                "domain": domain,
+                "page_path": parsed.path or "/",
+                "page_type": page_type,
+                "interaction_score": interaction_score,
+                "ui_density": len(raw_elements)
+            },
+            "ui_inventory": ui_inventory
+        })
 
     ai_snapshot = {
         "metadata": {
             "source": "selenium_exploratory_crawler",
-            "generated_from": INPUT_FILE
+            "generated_at": crawl_data.get("crawl_timestamp"),
+            "total_pages": len(enriched_pages)
         },
-        "page_context": page_context,
-        "ui_inventory": ui_inventory,
-        "available_actions": available_actions,
-        "state_transitions": state_transitions,
-        "exploration_hints": {
-            "focus_areas": [
-                "form validation",
-                "navigation consistency",
-                "dynamic UI behavior",
-                "error handling"
-            ],
-            "unknown_risks": [
-                "authentication flows",
-                "hidden UI states",
-                "async race conditions"
-            ]
-        }
+        "pages": enriched_pages
     }
 
-    with open(OUTPUT_FILE, "w") as f:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(ai_snapshot, f, indent=2)
 
-    print(f" Generic AI snapshot created: {OUTPUT_FILE}")
+    print("✅ Generic AI snapshot created.")
+    print(f"Pages processed: {len(enriched_pages)}")
 
 
 if __name__ == "__main__":

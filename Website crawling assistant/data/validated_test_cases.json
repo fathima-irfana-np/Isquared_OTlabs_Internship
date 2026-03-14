@@ -1,7 +1,7 @@
 {
   "generated_tests": [
     {
-      "id": "ET-01",
+      "id": "VT-01",
       "goal": "Break the loan calculator with a large loan amount",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -11,7 +11,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-02",
+      "id": "VT-02",
       "goal": "Poison the interest calculator with a special character",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -21,7 +21,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-03",
+      "id": "VT-03",
       "goal": "Contaminate the mortgage calculator with a long string",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -31,7 +31,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-04",
+      "id": "VT-04",
       "goal": "Break the retirement calculator with a negative age",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -41,7 +41,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-05",
+      "id": "VT-05",
       "goal": "Poison the auto loan calculator with a whitespace-only value",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -51,7 +51,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-06",
+      "id": "VT-06",
       "goal": "Contaminate the payment calculator with a cross-field value",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -62,7 +62,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-07",
+      "id": "VT-07",
       "goal": "Break the financial calculator with an empty required field",
       "steps": [
         "Navigate to '/financial-calculator.html'",
@@ -72,7 +72,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-08",
+      "id": "VT-08",
       "goal": "Poison the calculator with a max limit exceeded value",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -82,17 +82,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-09",
-      "goal": "Contaminate the calculator with a min limit undershot value",
-      "steps": [
-        "Navigate to '/retirement-calculator.html'",
-        "Enter '-1' into 'cagenow'",
-        "Click 'x'"
-      ],
-      "expected": "Error message or calculator crash"
-    },
-    {
-      "id": "ET-10",
+      "id": "VT-09",
       "goal": "Break the calculator with a dangerous string",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -102,7 +92,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-11",
+      "id": "VT-10",
       "goal": "Break loan calculator by filling 50% of form and navigating away",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -113,7 +103,7 @@
       "expected": "Form values are lost"
     },
     {
-      "id": "ET-12",
+      "id": "VT-11",
       "goal": "Test state transition by modifying a single field and recalculating",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -127,7 +117,7 @@
       "expected": "Output updates with new down payment value"
     },
     {
-      "id": "ET-13",
+      "id": "VT-12",
       "goal": "Check if form resets or retains values after navigating back",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -139,7 +129,7 @@
       "expected": "Form values are retained"
     },
     {
-      "id": "ET-14",
+      "id": "VT-13",
       "goal": "Test state persistence by changing a value mid-form and navigating away",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -152,7 +142,7 @@
       "expected": "Form values are retained"
     },
     {
-      "id": "ET-15",
+      "id": "VT-14",
       "goal": "Break payment calculator by submitting and then changing inputs without clearing result",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -166,7 +156,7 @@
       "expected": "Output updates with new loan amount value"
     },
     {
-      "id": "ET-16",
+      "id": "VT-15",
       "goal": "Test loan calculator by filling all fields and then modifying a single field",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -180,7 +170,7 @@
       "expected": "Output updates with new interest rate value"
     },
     {
-      "id": "ET-17",
+      "id": "VT-16",
       "goal": "Check if mortgage calculator retains values after navigating away and back",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -193,7 +183,7 @@
       "expected": "Form values are retained"
     },
     {
-      "id": "ET-18",
+      "id": "VT-17",
       "goal": "Test interest calculator by filling all fields and then changing a single field",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -207,7 +197,7 @@
       "expected": "Output updates with new interest rate value"
     },
     {
-      "id": "ET-19",
+      "id": "VT-18",
       "goal": "Break retirement calculator by submitting and then changing inputs without clearing result",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -221,7 +211,7 @@
       "expected": "Output updates with new income value"
     },
     {
-      "id": "ET-20",
+      "id": "VT-19",
       "goal": "Test auto loan calculator by filling 50% of form and navigating away",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -232,7 +222,7 @@
       "expected": "Form values are lost"
     },
     {
-      "id": "ET-21",
+      "id": "VT-20",
       "goal": "Break the loan calculator with minimum loan amount",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -242,7 +232,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-22",
+      "id": "VT-21",
       "goal": "Break the mortgage calculator with maximum house price",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -252,7 +242,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-23",
+      "id": "VT-22",
       "goal": "Break the auto loan calculator with minimum sale price",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -262,7 +252,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-24",
+      "id": "VT-23",
       "goal": "Break the interest calculator with maximum interest rate",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -272,7 +262,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-25",
+      "id": "VT-24",
       "goal": "Break the payment calculator with minimum loan term",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -282,7 +272,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-26",
+      "id": "VT-25",
       "goal": "Break the retirement calculator with maximum age",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -292,7 +282,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-27",
+      "id": "VT-26",
       "goal": "Break the loan calculator with very small loan amount",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -302,7 +292,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-28",
+      "id": "VT-27",
       "goal": "Break the mortgage calculator with very large down payment",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -312,7 +302,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-29",
+      "id": "VT-28",
       "goal": "Break the auto loan calculator with one below minimum loan term",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -322,7 +312,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-30",
+      "id": "VT-29",
       "goal": "Break the interest calculator with one above maximum interest rate",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -332,7 +322,7 @@
       "expected": "Error message or calculator crash"
     },
     {
-      "id": "ET-31",
+      "id": "VT-30",
       "goal": "Break the loan calculator by navigating away and back",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -344,7 +334,7 @@
       "expected": "The loan amount is retained as '10000'"
     },
     {
-      "id": "ET-32",
+      "id": "VT-31",
       "goal": "Disrupt the interest calculator with a search",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -356,7 +346,7 @@
       "expected": "The interest calculator is reset"
     },
     {
-      "id": "ET-33",
+      "id": "VT-32",
       "goal": "Confuse the retirement calculator with multiple navigations",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -368,7 +358,7 @@
       "expected": "The retirement calculator retains the age as '30'"
     },
     {
-      "id": "ET-34",
+      "id": "VT-33",
       "goal": "Break the payment calculator with a clear and reload",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -380,7 +370,7 @@
       "expected": "The payment calculator is reset"
     },
     {
-      "id": "ET-35",
+      "id": "VT-34",
       "goal": "Disrupt the mortgage calculator with a get pre-approval",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -391,7 +381,7 @@
       "expected": "The mortgage calculator retains the house price as '200000'"
     },
     {
-      "id": "ET-36",
+      "id": "VT-35",
       "goal": "Confuse the financial calculator with multiple searches",
       "steps": [
         "Navigate to '/financial-calculator.html'",
@@ -403,7 +393,7 @@
       "expected": "The financial calculator is reset"
     },
     {
-      "id": "ET-37",
+      "id": "VT-36",
       "goal": "Break the auto loan calculator with a trade-in value change",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -416,7 +406,7 @@
       "expected": "The auto loan calculator retains the sale price and trade-in value"
     },
     {
-      "id": "ET-38",
+      "id": "VT-37",
       "goal": "Disrupt the calculator with multiple tab changes",
       "steps": [
         "Navigate to '/'",
@@ -428,7 +418,7 @@
       "expected": "The calculator is in a valid state"
     },
     {
-      "id": "ET-41",
+      "id": "VT-38",
       "goal": "Break mode switching on loan calculator",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -440,7 +430,7 @@
       "expected": "Calculator displays correct results for both loan amounts"
     },
     {
-      "id": "ET-42",
+      "id": "VT-39",
       "goal": "Test rapid mode switching on interest calculator",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -453,7 +443,7 @@
       "expected": "Calculator displays correct results for both principle amounts"
     },
     {
-      "id": "ET-43",
+      "id": "VT-40",
       "goal": "Verify value retention on retirement calculator",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -467,7 +457,7 @@
       "expected": "Calculator retains previous values for age and retirement age"
     },
     {
-      "id": "ET-44",
+      "id": "VT-41",
       "goal": "Check UI state after rapid mode switching on payment calculator",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -481,7 +471,7 @@
       "expected": "Calculator displays correct results and UI state is consistent"
     },
     {
-      "id": "ET-45",
+      "id": "VT-42",
       "goal": "Test mode switching with incomplete fields on mortgage calculator",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -493,7 +483,7 @@
       "expected": "Calculator displays error message or warning for incomplete fields"
     },
     {
-      "id": "ET-46",
+      "id": "VT-43",
       "goal": "Verify label changes on auto loan calculator",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -506,7 +496,7 @@
       "expected": "Calculator displays correct results and label changes are reflected"
     },
     {
-      "id": "ET-47",
+      "id": "VT-44",
       "goal": "Check UI flicker on financial calculator",
       "steps": [
         "Navigate to '/financial-calculator.html'",
@@ -517,7 +507,7 @@
       "expected": "Calculator UI does not flicker or display inconsistent results"
     },
     {
-      "id": "ET-48",
+      "id": "VT-45",
       "goal": "Test mode switching with valid and invalid inputs on loan calculator",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -529,7 +519,7 @@
       "expected": "Calculator displays error message for invalid input and correct results for valid input"
     },
     {
-      "id": "ET-49",
+      "id": "VT-46",
       "goal": "Verify calculation results after mode switching on interest calculator",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -544,7 +534,7 @@
       "expected": "Calculator displays correct results for both principle amounts and interest rates"
     },
     {
-      "id": "ET-50",
+      "id": "VT-47",
       "goal": "Check UI state consistency after mode switching on retirement calculator",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -559,7 +549,7 @@
       "expected": "Calculator UI state is consistent and displays correct results"
     },
     {
-      "id": "ET-51",
+      "id": "VT-48",
       "goal": "Trigger calculation error and verify recovery",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -571,7 +561,7 @@
       "expected": "Calculation result is displayed without errors"
     },
     {
-      "id": "ET-52",
+      "id": "VT-49",
       "goal": "Submit empty form and verify error recovery",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -582,7 +572,7 @@
       "expected": "Error message is cleared and calculation result is displayed"
     },
     {
-      "id": "ET-53",
+      "id": "VT-50",
       "goal": "Verify invalid input error clearance",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -594,7 +584,7 @@
       "expected": "Error message is cleared and calculation result is displayed"
     },
     {
-      "id": "ET-54",
+      "id": "VT-51",
       "goal": "Clear all fields after successful calculation",
       "steps": [
         "Navigate to '/payment-calculator.html'",
@@ -606,7 +596,7 @@
       "expected": "All fields are cleared and calculation result is reset"
     },
     {
-      "id": "ET-55",
+      "id": "VT-52",
       "goal": "Verify valid data submission and reset",
       "steps": [
         "Navigate to '/retirement-calculator.html'",
@@ -618,7 +608,7 @@
       "expected": "All fields are cleared and calculation result is reset"
     },
     {
-      "id": "ET-56",
+      "id": "VT-53",
       "goal": "Trigger division by zero error and recover",
       "steps": [
         "Navigate to '/loan-calculator.html'",
@@ -630,7 +620,7 @@
       "expected": "Error message is cleared and calculation result is displayed"
     },
     {
-      "id": "ET-57",
+      "id": "VT-54",
       "goal": "Submit form with invalid value and correct it",
       "steps": [
         "Navigate to '/auto-loan-calculator.html'",
@@ -642,7 +632,7 @@
       "expected": "Error message is cleared and calculation result is displayed"
     },
     {
-      "id": "ET-58",
+      "id": "VT-55",
       "goal": "Verify calculation error recovery with multiple fields",
       "steps": [
         "Navigate to '/mortgage-calculator.html'",
@@ -656,7 +646,7 @@
       "expected": "Error message is cleared and calculation result is displayed"
     },
     {
-      "id": "ET-59",
+      "id": "VT-56",
       "goal": "Clear form after successful calculation with multiple fields",
       "steps": [
         "Navigate to '/interest-calculator.html'",
@@ -668,7 +658,7 @@
       "expected": "All fields are cleared and calculation result is reset"
     },
     {
-      "id": "ET-60",
+      "id": "VT-57",
       "goal": "Verify valid data submission and reset with multiple fields",
       "steps": [
         "Navigate to '/retirement-calculator.html'",

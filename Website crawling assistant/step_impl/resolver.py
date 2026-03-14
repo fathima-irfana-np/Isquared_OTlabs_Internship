@@ -9,20 +9,28 @@ class SmartResolver:
     def resolve_actionable_element(self, intent: str, roles=None, find_input=False):
         """
         Heuristically finds an element based on intent text.
-        Tries roles like 'button', 'link', 'textbox' if provided.
+        Tries: 1) CSS id/name, 2) role match, 3) label/placeholder, 4) generic text.
         """
+        # 0. Try direct CSS selector by id or name (snapshot labels are often IDs)
+        for selector in [f"#{intent}", f"[name='{intent}']", f"[id='{intent}']"]:
+            try:
+                loc = self.page.locator(selector)
+                if loc.count() > 0:
+                    return loc.first
+            except:
+                continue
+
         # 1. Try direct role match (exact text)
         if roles:
             for role in roles:
                 try:
-                    loc = self.page.get_by_role(role, name=re.compile(f"^{intent}$", re.IGNORECASE), include_hidden=False)
+                    loc = self.page.get_by_role(role, name=re.compile(f"^{re.escape(intent)}$", re.IGNORECASE), include_hidden=False)
                     if loc.count() > 0:
                         return loc.first
                 except:
                     continue
 
         # 2. Try by label/placeholder/text
-        # If we are looking for an input (find_input=True), we favor get_by_label
         if find_input:
             try:
                 loc = self.page.get_by_label(intent, exact=False)
@@ -35,12 +43,9 @@ class SmartResolver:
         try:
             loc = self.page.get_by_text(intent, exact=False)
             if loc.count() > 0:
-                # If we need an input but found a <td> or <span>, we must look "near" it
                 found = loc.first
                 tag = found.evaluate("el => el.tagName.toLowerCase()")
                 if find_input and tag not in ["input", "textarea", "select"]:
-                    # Look for nearest input inside the parent row or container
-                    # We can use the 'near' locator if supported, but simple relative selection is often faster
                     return self.page.locator("input, textarea, select").filter(has_not=self.page.get_by_text(intent)).near(found).first
                 return found
         except:

@@ -20,3 +20,7 @@ def run_canary():
 
 if __name__ == "__main__":
     run_canary()
+"""
+A standalone script used to verify that Playwright is correctly installed 
+and can launch browsers outside of Gauge.
+"""

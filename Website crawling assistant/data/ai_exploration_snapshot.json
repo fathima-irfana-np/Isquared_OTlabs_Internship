@@ -1,417 +1,2180 @@
 {
   "metadata": {
     "source": "selenium_exploratory_crawler",
-    "generated_from": "data/crawl_results.json"
+    "generated_at": "2026-02-24 14:59:43",
+    "total_pages": 10
   },
-  "page_context": {
-    "url": "https://www.calculator.net/",
-    "domain": "www.calculator.net",
-    "page_path": "/",
-    "ui_density": 107
-  },
-  "ui_inventory": {
-    "links": [
-      "Age Calculator",
-      "Amortization Calculator",
-      "Auto Loan Calculator",
-      "BMI Calculator",
-      "BMR Calculator",
-      "Body Fat Calculator",
-      "Calorie Calculator",
-      "Compound Interest Calculator",
-      "Concrete Calculator",
-      "Conversion Calculator",
-      "Date Calculator",
-      "Due Date Calculator",
-      "Finance Calculator",
-      "Financial Calculators",
-      "Fitness & Health Calculators",
-      "Fraction Calculator",
-      "GPA Calculator",
-      "Grade Calculator",
-      "Hours Calculator",
-      "Ideal Weight Calculator",
-      "Income Tax Calculator",
-      "Inflation Calculator",
-      "Interest Calculator",
-      "Interest Rate Calculator",
-      "Investment Calculator",
-      "Loan Calculator",
-      "Math Calculators",
-      "Mortgage Calculator",
-      "Other Calculators",
-      "Pace Calculator",
-      "Password Generator",
-      "Payment Calculator",
-      "Percentage Calculator",
-      "Pregnancy Calculator",
-      "Pregnancy Conception Calculator",
-      "Random Number Generator",
-      "Retirement Calculator",
-      "Salary Calculator",
-      "Sales Tax Calculator",
-      "Scientific Calculator",
-      "Standard Deviation Calculator",
-      "Subnet Calculator",
-      "Time Calculator",
-      "Triangle Calculator",
-      "about us",
-      "calculator.net",
-      "https://www.calculator.net/",
-      "https://www.calculator.net/financial-calculator.html",
-      "https://www.calculator.net/fitness-and-health-calculator.html",
-      "https://www.calculator.net/math-calculator.html",
-      "https://www.calculator.net/other-calculator.html",
-      "https://www.calculator.net/sitemap.html",
-      "privacy policy",
-      "sign in",
-      "sitemap",
-      "terms of use"
-    ],
-    "interactive_widgets": [
-      "%",
-      "(",
-      ")",
-      "+",
-      ".",
-      "/",
-      "0",
-      "1",
-      "1/x",
-      "10x",
-      "2",
-      "3",
-      "3\u221ax",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "=",
-      "AC",
-      "Ans",
-      "Back",
-      "EXP",
-      "M+",
-      "M-",
-      "MR",
-      "RND",
-      "Search",
-      "cos",
-      "cos-1",
-      "e",
-      "ex",
-      "ln",
-      "log",
-      "n!",
-      "sin",
-      "sin-1",
-      "tan",
-      "tan-1",
-      "x2",
-      "x3",
-      "xy",
-      "y\u221ax",
-      "\u00b1",
-      "\u00d7",
-      "\u03c0",
-      "\u2013",
-      "\u221ax"
-    ],
-    "inputs": [
-      "deg",
-      "rad"
-    ]
-  },
-  "available_actions": [
-    "navigate via links",
-    "enter data into input fields",
-    "interact with dynamic UI elements"
-  ],
-  "state_transitions": [
+  "pages": [
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/my-account/sign-in.php",
-      "via": "sign in"
+      "page_context": {
+        "url": "https://www.calculator.net/",
+        "title": "Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science",
+        "domain": "www.calculator.net",
+        "page_path": "/",
+        "page_type": "interactive",
+        "interaction_score": 66,
+        "ui_density": 109
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Financial Calculators",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Calculator",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan Calculator",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan Calculator",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Calculator",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment Calculator",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement Calculator",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization Calculator",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation Calculator",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Finance Calculator",
+            "href": "https://www.calculator.net/finance-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Income Tax Calculator",
+            "href": "https://www.calculator.net/tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest Calculator",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Salary Calculator",
+            "href": "https://www.calculator.net/salary-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Rate Calculator",
+            "href": "https://www.calculator.net/interest-rate-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Sales Tax Calculator",
+            "href": "https://www.calculator.net/sales-tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Fitness & Health Calculators",
+            "href": "https://www.calculator.net/fitness-and-health-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "BMI Calculator",
+            "href": "https://www.calculator.net/bmi-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Calorie Calculator",
+            "href": "https://www.calculator.net/calorie-calculator.html"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "span",
+            "role": "action",
+            "label": "sin"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "cos"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "tan"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "sin-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "cos-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "tan-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "xy"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "x3"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "x2"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "ex"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "10x"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "y\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "3\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "ln"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "log"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "1/x"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "n!"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "+"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Back"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Ans"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "M+"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "EXP"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "/"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "M-"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "RND"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "AC"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "="
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "MR"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Deg"
+          },
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Rad"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "selection",
+            "label": "scirdsetting"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/financial-calculator.html",
-      "via": "unnamed_element"
+      "page_context": {
+        "url": "https://www.calculator.net/",
+        "title": "Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science",
+        "domain": "www.calculator.net",
+        "page_path": "/",
+        "page_type": "interactive",
+        "interaction_score": 66,
+        "ui_density": 109
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Financial Calculators",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Calculator",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan Calculator",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan Calculator",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Calculator",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment Calculator",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement Calculator",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization Calculator",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation Calculator",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Finance Calculator",
+            "href": "https://www.calculator.net/finance-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Income Tax Calculator",
+            "href": "https://www.calculator.net/tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest Calculator",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Salary Calculator",
+            "href": "https://www.calculator.net/salary-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Rate Calculator",
+            "href": "https://www.calculator.net/interest-rate-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Sales Tax Calculator",
+            "href": "https://www.calculator.net/sales-tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Fitness & Health Calculators",
+            "href": "https://www.calculator.net/fitness-and-health-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "BMI Calculator",
+            "href": "https://www.calculator.net/bmi-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Calorie Calculator",
+            "href": "https://www.calculator.net/calorie-calculator.html"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "span",
+            "role": "action",
+            "label": "sin"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "cos"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "tan"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "sin-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "cos-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "tan-1"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "xy"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "x3"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "x2"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "ex"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "10x"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "y\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "3\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "\u221ax"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "ln"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "log"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "1/x"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "n!"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "+"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Back"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Ans"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "M+"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "EXP"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "/"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "M-"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "RND"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "AC"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "="
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "MR"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Deg"
+          },
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Rad"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "selection",
+            "label": "scirdsetting"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/financial-calculator.html",
-      "via": "Financial Calculators"
+      "page_context": {
+        "url": "https://www.calculator.net/my-account/sign-in.php",
+        "title": "Sign In",
+        "domain": "www.calculator.net",
+        "page_path": "/my-account/sign-in.php",
+        "page_type": "form-heavy",
+        "interaction_score": 16,
+        "ui_density": 23
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Forget password?",
+            "href": "https://www.calculator.net/my-account/forget.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Create a free account",
+            "href": "https://www.calculator.net/my-account/create-account.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Sign in with Google",
+            "href": "https://www.calculator.net/my-account/google-signup.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "about us",
+            "href": "https://www.calculator.net/about-us.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sitemap",
+            "href": "https://www.calculator.net/sitemap.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "terms of use",
+            "href": "https://www.calculator.net/about-us.html#terms"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "privacy policy",
+            "href": "https://www.calculator.net/about-us.html#privacy"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FINANCIAL",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FITNESS & HEALTH",
+            "href": "https://www.calculator.net/fitness-and-health-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "MATH",
+            "href": "https://www.calculator.net/math-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "OTHER",
+            "href": "https://www.calculator.net/other-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "email",
+            "validation": {
+              "maxlength": "100"
+            }
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "password",
+            "validation": {
+              "maxlength": "100"
+            }
+          },
+          {
+            "type": "input",
+            "role": "selection",
+            "label": "rememberme"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "stay signed in"
+          },
+          {
+            "type": "input",
+            "role": "other",
+            "label": "reset"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "submit"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/mortgage-calculator.html",
-      "via": "Mortgage Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/financial-calculator.html",
+        "title": "www.calculator.net",
+        "domain": "www.calculator.net",
+        "page_path": "/financial-calculator.html",
+        "page_type": "content",
+        "interaction_score": 2,
+        "ui_density": 1
+      },
+      "ui_inventory": {
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Reload"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/loan-calculator.html",
-      "via": "Loan Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/mortgage-calculator.html",
+        "title": "Mortgage Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/mortgage-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 57,
+        "ui_density": 71
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "mortgage calculator",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "House Affordability Calculator",
+            "href": "https://www.calculator.net/house-affordability-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Currency",
+            "href": "https://www.calculator.net/currency-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Finance",
+            "href": "https://www.calculator.net/finance-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Payoff",
+            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Income Tax",
+            "href": "https://www.calculator.net/tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Salary",
+            "href": "https://www.calculator.net/salary-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "401K",
+            "href": "https://www.calculator.net/401k-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "chouseprice"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cdownpayment"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinterestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cstartyear"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cpropertytaxes"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "chomeins"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cpmi"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "choa"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cothercost"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "dropdowns": [
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cdownpaymentunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cstartmonth"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cpropertytaxesunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "chomeinsunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cpmiunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "choaunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cothercostunit"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Include Taxes & Costs Below"
+          },
+          {
+            "type": "img",
+            "role": "other",
+            "label": "Save this calculation"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "input",
+            "role": "action",
+            "label": "Clear"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "See your local rates"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Get pre-approval"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/auto-loan-calculator.html",
-      "via": "Auto Loan Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/loan-calculator.html",
+        "title": "Loan Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/loan-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 53,
+        "ui_density": 82
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "loan calculator",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortized Loan: Fixed payments paid periodically until loan maturity",
+            "href": "https://www.calculator.net/loan-calculator.html#monthlyfixed"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Deferred Payment Loan: Single lump sum paid at loan maturity",
+            "href": "https://www.calculator.net/loan-calculator.html#intheend"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Bond: Predetermined lump sum paid at loan maturity (the face or par value of a b",
+            "href": "https://www.calculator.net/loan-calculator.html#fixedend"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "mortgages",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "auto loans",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "student loans",
+            "href": "https://www.calculator.net/student-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "personal loans",
+            "href": "https://www.calculator.net/personal-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FHA Loan Calculator",
+            "href": "https://www.calculator.net/fha-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "VA Mortgage Calculator",
+            "href": "https://www.calculator.net/va-mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Business Loan Calculator",
+            "href": "https://www.calculator.net/business-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Calculator",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "APR Calculator",
+            "href": "https://www.calculator.net/apr-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest Calculator",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Credit Card Calculator",
+            "href": "https://www.calculator.net/credit-card-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanamount"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloantermmonth"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinterestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c2loanamount"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c2loanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c2loantermmonth"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c2interestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c3loanamount"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c3loanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c3loantermmonth"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "c3interestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "dropdowns": [
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "ccompound"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cpayback"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "c2compound"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "c3compound"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "input",
+            "role": "action",
+            "label": "Clear"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "img",
+            "role": "other",
+            "label": "Save this calculation"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/interest-calculator.html",
-      "via": "Interest Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/auto-loan-calculator.html",
+        "title": "Auto Loan Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/auto-loan-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 36,
+        "ui_density": 62
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "auto loan calculator",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Cash Back or Low Interest Calculator",
+            "href": "https://www.calculator.net/cash-back-or-low-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Lease Calculator",
+            "href": "https://www.calculator.net/auto-lease-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Currency",
+            "href": "https://www.calculator.net/currency-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Finance",
+            "href": "https://www.calculator.net/finance-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Payoff",
+            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Income Tax",
+            "href": "https://www.calculator.net/tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Salary",
+            "href": "https://www.calculator.net/salary-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "csaleprice"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinterestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cincentive"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cdownpayment"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "ctradeinvalue"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "ctradeinowned"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "csaletax"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "ctitlereg"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "dropdowns": [
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "cstate"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "Include taxes and fees in loan"
+          },
+          {
+            "type": "img",
+            "role": "other",
+            "label": "Save this calculation"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/payment-calculator.html",
-      "via": "Payment Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/interest-calculator.html",
+        "title": "Interest Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/interest-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 35,
+        "ui_density": 62
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "interest calculator",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Average Return Calculator",
+            "href": "https://www.calculator.net/average-return-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ROI Calculator",
+            "href": "https://www.calculator.net/roi-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation Calculator",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Currency",
+            "href": "https://www.calculator.net/currency-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Finance",
+            "href": "https://www.calculator.net/finance-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Payoff",
+            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Income Tax",
+            "href": "https://www.calculator.net/tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Compound Interest",
+            "href": "https://www.calculator.net/compound-interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Salary",
+            "href": "https://www.calculator.net/salary-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cstartingprinciple"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cannualaddition"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cmonthlyaddition"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinterestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cyears"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cmonths"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "ctaxtrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinflationrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "beginning"
+          },
+          {
+            "type": "label",
+            "role": "form_label",
+            "label": "end"
+          },
+          {
+            "type": "img",
+            "role": "other",
+            "label": "Save this calculation"
+          }
+        ],
+        "dropdowns": [
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "ccompound"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "input",
+            "role": "action",
+            "label": "Clear"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/retirement-calculator.html",
-      "via": "Retirement Calculator"
+      "page_context": {
+        "url": "https://www.calculator.net/payment-calculator.html",
+        "title": "Payment Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/payment-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 18,
+        "ui_density": 61
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "payment calculator",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan Calculator",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Take-Home-Pay Calculator",
+            "href": "https://www.calculator.net/take-home-pay-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan Calculator",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage Calculator",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "APR Calculator",
+            "href": "https://www.calculator.net/apr-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest Rate Calculator",
+            "href": "https://www.calculator.net/interest-rate-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Student Loan Calculator",
+            "href": "https://www.calculator.net/student-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Personal Loan Calculator",
+            "href": "https://www.calculator.net/personal-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Credit Card Calculator",
+            "href": "https://www.calculator.net/credit-card-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Credit Cards Payoff Calculator",
+            "href": "https://www.calculator.net/credit-card-payoff-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Retirement",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Amortization",
+            "href": "https://www.calculator.net/amortization-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Currency",
+            "href": "https://www.calculator.net/currency-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanamount"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cloanterm"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinterestrate"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "input",
+            "role": "action",
+            "label": "Clear"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ],
+        "other_clickables": [
+          {
+            "type": "img",
+            "role": "other",
+            "label": "Save this calculation"
+          }
+        ]
+      }
     },
     {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/amortization-calculator.html",
-      "via": "Amortization Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/investment-calculator.html",
-      "via": "Investment Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/inflation-calculator.html",
-      "via": "Inflation Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/finance-calculator.html",
-      "via": "Finance Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/tax-calculator.html",
-      "via": "Income Tax Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/compound-interest-calculator.html",
-      "via": "Compound Interest Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/salary-calculator.html",
-      "via": "Salary Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/interest-rate-calculator.html",
-      "via": "Interest Rate Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/sales-tax-calculator.html",
-      "via": "Sales Tax Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
-      "via": "unnamed_element"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/fitness-and-health-calculator.html",
-      "via": "Fitness & Health Calculators"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/bmi-calculator.html",
-      "via": "BMI Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/calorie-calculator.html",
-      "via": "Calorie Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/body-fat-calculator.html",
-      "via": "Body Fat Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/bmr-calculator.html",
-      "via": "BMR Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/ideal-weight-calculator.html",
-      "via": "Ideal Weight Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/pace-calculator.html",
-      "via": "Pace Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/pregnancy-calculator.html",
-      "via": "Pregnancy Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/pregnancy-conception-calculator.html",
-      "via": "Pregnancy Conception Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/due-date-calculator.html",
-      "via": "Due Date Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/math-calculator.html",
-      "via": "unnamed_element"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/math-calculator.html",
-      "via": "Math Calculators"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/scientific-calculator.html",
-      "via": "Scientific Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/fraction-calculator.html",
-      "via": "Fraction Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/percent-calculator.html",
-      "via": "Percentage Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/random-number-generator.html",
-      "via": "Random Number Generator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/triangle-calculator.html",
-      "via": "Triangle Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/standard-deviation-calculator.html",
-      "via": "Standard Deviation Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/other-calculator.html",
-      "via": "unnamed_element"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/other-calculator.html",
-      "via": "Other Calculators"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/age-calculator.html",
-      "via": "Age Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/date-calculator.html",
-      "via": "Date Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/time-calculator.html",
-      "via": "Time Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/hours-calculator.html",
-      "via": "Hours Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/gpa-calculator.html",
-      "via": "GPA Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/grade-calculator.html",
-      "via": "Grade Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/concrete-calculator.html",
-      "via": "Concrete Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/ip-subnet-calculator.html",
-      "via": "Subnet Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/password-generator.html",
-      "via": "Password Generator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/conversion-calculator.html",
-      "via": "Conversion Calculator"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/sitemap.html",
-      "via": "unnamed_element"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/about-us.html",
-      "via": "about us"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/sitemap.html",
-      "via": "sitemap"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/about-us.html#terms",
-      "via": "terms of use"
-    },
-    {
-      "from": "https://www.calculator.net/",
-      "to": "https://www.calculator.net/about-us.html#privacy",
-      "via": "privacy policy"
+      "page_context": {
+        "url": "https://www.calculator.net/retirement-calculator.html",
+        "title": "Retirement Calculator",
+        "domain": "www.calculator.net",
+        "page_path": "/retirement-calculator.html",
+        "page_type": "form-heavy",
+        "interaction_score": 58,
+        "ui_density": 71
+      },
+      "ui_inventory": {
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "sign in",
+            "href": "https://www.calculator.net/my-account/sign-in.php"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "home",
+            "href": "https://www.calculator.net/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "financial",
+            "href": "https://www.calculator.net/financial-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "retirement calculator",
+            "href": "https://www.calculator.net/retirement-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "401K Calculator",
+            "href": "https://www.calculator.net/401k-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Roth IRA Calculator",
+            "href": "https://www.calculator.net/roth-ira-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Inflation Calculator",
+            "href": "https://www.calculator.net/inflation-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Social Security Calculator",
+            "href": "https://www.calculator.net/social-security-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "IRA Calculator",
+            "href": "https://www.calculator.net/ira-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pension Calculator",
+            "href": "https://www.calculator.net/pension-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Annuity Calculator",
+            "href": "https://www.calculator.net/annuity-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Annuity Payout Calculator",
+            "href": "https://www.calculator.net/annuity-payout-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Rental Property Calculator",
+            "href": "https://www.calculator.net/rental-property-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Estate Tax Calculator",
+            "href": "https://www.calculator.net/estate-tax-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Mortgage",
+            "href": "https://www.calculator.net/mortgage-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Loan",
+            "href": "https://www.calculator.net/loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Auto Loan",
+            "href": "https://www.calculator.net/auto-loan-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Interest",
+            "href": "https://www.calculator.net/interest-calculator.html"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Payment",
+            "href": "https://www.calculator.net/payment-calculator.html"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cagenow"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cretireage"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "clifeexp"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cincomenow"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cincomeinc"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cretinclevel"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinvreturn"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cinflation"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cotherincome"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "csavingnow"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cannualsave"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cneededamount"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cannualaddition"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cmonthlyaddition"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "cmonthlywithdraw"
+          },
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "calcSearchTerm"
+          }
+        ],
+        "dropdowns": [
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "crilunit"
+          },
+          {
+            "type": "select",
+            "role": "dropdown",
+            "label": "csaveunit"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "input",
+            "role": "action",
+            "label": "x"
+          },
+          {
+            "type": "input",
+            "role": "action",
+            "label": "Clear"
+          },
+          {
+            "type": "span",
+            "role": "action",
+            "label": "Search"
+          }
+        ]
+      }
     }
-  ],
-  "exploration_hints": {
-    "focus_areas": [
-      "form validation",
-      "navigation consistency",
-      "dynamic UI behavior",
-      "error handling"
-    ],
-    "unknown_risks": [
-      "authentication flows",
-      "hidden UI states",
-      "async race conditions"
-    ]
-  }
+  ]
 }
