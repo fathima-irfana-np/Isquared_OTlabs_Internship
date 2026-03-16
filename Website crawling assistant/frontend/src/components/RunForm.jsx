@@ -44,7 +44,7 @@ export default function RunForm({ url, pages, onUrl, onPages, onRun, disabled })
           onClick={onRun}
         >
           {disabled
-            ? <><span className="spinner" /> Running…</>
+            ? <><span className="spinner" /> Running Pipeline…</>
             : <><PlayIcon /> Run Pipeline</>}
         </button>
       </div>

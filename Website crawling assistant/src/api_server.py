@@ -1,5 +1,16 @@
+"""
+QA Engine — FastAPI Backend
+POST /api/crawl           → runs the_crawler.py
+POST /api/process         → runs run_tester.py
+POST /api/generate-report → runs report_generator.py
+GET  /api/results         → validated test cases + meta
+GET  /api/download        → serves PDF
+GET  /api/health          → health check
+"""
+
 import asyncio
 import json
+import os
 import queue
 import subprocess
 import sys
@@ -23,6 +34,10 @@ except ImportError:
 
 PYTHON = sys.executable
 
+# PYTHONUNBUFFERED=1 ensures every child process (run_tester.py
+# and all the scripts it spawns) flushes stdout immediately
+UNBUFFERED_ENV = {**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"}
+
 app = FastAPI(title="QA Engine API", version="2.0")
 app.add_middleware(
     CORSMiddleware,
@@ -36,20 +51,23 @@ _pipeline_lock = threading.Lock()
 
 def _stream_script(script: str, stdin_data, eq: queue.Queue, label: str):
     """
-    Run python script with -u (unbuffered) so every print() line
-    streams to the frontend immediately in real time.
+    Run a Python script with -u (unbuffered) and PYTHONUNBUFFERED=1
+    so every print() from every nested subprocess streams live.
+    stderr is merged into stdout so nothing is lost.
     """
     proc = subprocess.Popen(
         [PYTHON, "-u", str(SRC_DIR / script)],
         stdin=subprocess.PIPE if stdin_data else None,
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
+        stderr=subprocess.STDOUT,   # merge stderr → we see everything
         text=True,
-        bufsize=1,
+        bufsize=0,                  # fully unbuffered
         cwd=str(BASE_DIR),
         encoding="utf-8",
         errors="replace",
+        env=UNBUFFERED_ENV,         # all child processes inherit this
     )
+
     if stdin_data and proc.stdin:
         proc.stdin.write(stdin_data)
         proc.stdin.flush()
@@ -177,9 +195,9 @@ async def get_results():
         with open(rejected_path, encoding="utf-8") as f:
             rejected_count = len(json.load(f).get("rejected_tests", []))
 
-    pages_count = 0
+    pages_count    = 0
     elements_count = 0
-    target_url = ""
+    target_url     = ""
     if snapshot_path.exists():
         with open(snapshot_path, encoding="utf-8") as f:
             snap = json.load(f)

@@ -1,3 +1,181 @@
 {
-  "rejected_tests": []
+  "rejected_tests": [
+    {
+      "test": {
+        "id": "ET-07",
+        "goal": "Input torture with alphanumerics",
+        "steps": [
+          "Navigate to '/'",
+          "Enter 'abcdefghijklmnopqrstuvwxyz0123456789' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Error message or input field rejection"
+      },
+      "issues": [
+        "Step 2: Hallucinated label 'abcdefghijklmnopqrstuvwxyz0123456789'"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-51",
+        "goal": "Trigger error recovery on empty form submission",
+        "steps": [
+          "Navigate to '/'",
+          "Click 'Dismiss'",
+          "Enter '' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Error message is displayed"
+      },
+      "issues": [
+        "Step 3: Hallucinated label ' into '"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-52",
+        "goal": "Test invalid input correction",
+        "steps": [
+          "Navigate to '/login'",
+          "Enter 'invalid' into 'Your email'",
+          "Click 'Sign In'",
+          "Enter 'valid@example.com' into 'Your email'",
+          "Click 'Sign In'"
+        ],
+        "expected": "Error message is cleared"
+      },
+      "issues": [
+        "Step 2: Hallucinated label 'invalid'"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-53",
+        "goal": "Verify calculation error recovery",
+        "steps": [
+          "Navigate to '/register'",
+          "Enter 'test' into 'on'",
+          "Enter 'test@example.com' into 'Your email'",
+          "Click 'Create Account'",
+          "Enter 'valid' into 'on'",
+          "Click 'Create Account'"
+        ],
+        "expected": "Error message is cleared"
+      },
+      "issues": [
+        "Step 5: Hallucinated label 'valid'"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-54",
+        "goal": "Test clear all fields after successful calculation",
+        "steps": [
+          "Navigate to '/about'",
+          "Enter 'test@example.com' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter '' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Form is cleared"
+      },
+      "issues": [
+        "Step 4: Hallucinated label ' into '"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-55",
+        "goal": "Verify valid data reset",
+        "steps": [
+          "Navigate to '/services'",
+          "Enter 'test@example.com' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter '' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Form is reset"
+      },
+      "issues": [
+        "Step 4: Hallucinated label ' into '"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-56",
+        "goal": "Test error recovery on multiple invalid submissions",
+        "steps": [
+          "Navigate to '/services/weddings'",
+          "Enter 'invalid' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter 'invalid' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter 'valid@example.com' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Error message is cleared"
+      },
+      "issues": [
+        "Step 2: Hallucinated label 'invalid'",
+        "Step 4: Hallucinated label 'invalid'"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-57",
+        "goal": "Verify error message persistence",
+        "steps": [
+          "Navigate to '/'",
+          "Enter 'invalid' into 'Your email'",
+          "Click 'Dismiss'",
+          "Navigate to '/login'",
+          "Click 'Sign In'"
+        ],
+        "expected": "Error message is still displayed"
+      },
+      "issues": [
+        "Step 2: Hallucinated label 'invalid'"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-58",
+        "goal": "Test form reset after successful submission",
+        "steps": [
+          "Navigate to '/register'",
+          "Enter 'test@example.com' into 'Your email'",
+          "Enter 'test' into 'on'",
+          "Click 'Create Account'",
+          "Enter '' into 'Your email'",
+          "Enter '' into 'on'",
+          "Click 'Create Account'"
+        ],
+        "expected": "Form is reset"
+      },
+      "issues": [
+        "Step 5: Hallucinated label ' into '",
+        "Step 6: Hallucinated label ' into '"
+      ]
+    },
+    {
+      "test": {
+        "id": "ET-59",
+        "goal": "Verify error recovery on consecutive empty submissions",
+        "steps": [
+          "Navigate to '/about'",
+          "Enter '' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter '' into 'Your email'",
+          "Click 'Dismiss'",
+          "Enter 'valid@example.com' into 'Your email'",
+          "Click 'Dismiss'"
+        ],
+        "expected": "Error message is cleared"
+      },
+      "issues": [
+        "Step 2: Hallucinated label ' into '",
+        "Step 4: Hallucinated label ' into '"
+      ]
+    }
+  ]
 }
