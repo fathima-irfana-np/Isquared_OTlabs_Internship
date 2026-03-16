@@ -1,15 +1,10 @@
-"""
-FastAPI backend for the AI Exploratory Test Generator.
-Runs the 7-stage Python pipeline and streams progress via Server-Sent Events.
-"""
-
 import asyncio
 import json
-import os
 import queue
 import subprocess
 import sys
 import threading
+import time
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -17,11 +12,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
-# ── Paths ────────────────────────────────────────────────────────
 SRC_DIR  = Path(__file__).parent
 BASE_DIR = SRC_DIR.parent
 
-# Load .env so GROQ_API_KEY is available to subprocesses
 try:
     from dotenv import load_dotenv
     load_dotenv(SRC_DIR / ".env")
@@ -30,9 +23,7 @@ except ImportError:
 
 PYTHON = sys.executable
 
-# ── App ──────────────────────────────────────────────────────────
-app = FastAPI(title="AI Test Generator API", version="1.0")
-
+app = FastAPI(title="QA Engine API", version="2.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -40,128 +31,146 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Pipeline stages ──────────────────────────────────────────────
-STAGES = [
-    (1, "Website Crawling",                "the_crawler.py"),
-    (2, "Enriching Snapshot",              "enrich_crawl_for_ai.py"),
-    (3, "AI Test Generation",              "ai_test_generator_grok.py"),
-    (4, "Anti-Hallucination Validation",   "validator.py"),
-    (5, "Converting to Gauge Specs",       "json_to_gauge.py"),
-    (6, "Generating Step Implementations", "ai_step_generator.py"),
-    (7, "Building PDF Report",             "report_generator.py"),
-]
-
-# Only one pipeline at a time
 _pipeline_lock = threading.Lock()
 
 
-# ── Pipeline runner (runs in background thread) ──────────────────
-def _run_pipeline(url: str, max_pages: int, max_depth: int, eq: queue.Queue):
-    try:
-        for stage_id, stage_name, script in STAGES:
-            eq.put({"stage": stage_id, "name": stage_name, "status": "running"})
+def _stream_script(script: str, stdin_data, eq: queue.Queue, label: str):
+    """
+    Run python script with -u (unbuffered) so every print() line
+    streams to the frontend immediately in real time.
+    """
+    proc = subprocess.Popen(
+        [PYTHON, "-u", str(SRC_DIR / script)],
+        stdin=subprocess.PIPE if stdin_data else None,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+        cwd=str(BASE_DIR),
+        encoding="utf-8",
+        errors="replace",
+    )
+    if stdin_data and proc.stdin:
+        proc.stdin.write(stdin_data)
+        proc.stdin.flush()
+        proc.stdin.close()
 
-            stdin_data = None
-            if stage_id == 1:
-                # Crawler reads: URL, depth, pages from stdin
-                stdin_data = f"{url}\n{max_depth}\n{max_pages}\n"
+    for line in proc.stdout:
+        line = line.rstrip()
+        if line:
+            eq.put({"type": "log", "phase": label, "text": line})
 
-            # Use Popen to stream output
-            proc = subprocess.Popen(
-                [PYTHON, str(SRC_DIR / script)],
-                stdin=subprocess.PIPE if stdin_data else None,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                bufsize=1,
-                cwd=str(BASE_DIR),
-                encoding='utf-8',
-                errors='replace'
-            )
-
-            if stdin_data and proc.stdin:
-                proc.stdin.write(stdin_data)
-                proc.stdin.flush()
-                proc.stdin.close()
-
-            # Read line by line and stream
-            for line in proc.stdout:
-                line = line.strip()
-                if line:
-                    eq.put({"stage": stage_id, "name": stage_name, "status": "running", "log": line})
-
-            proc.wait()
-
-            if proc.returncode != 0:
-                eq.put({"stage": stage_id, "name": stage_name,
-                        "status": "error", "error": f"Stage crashed with exit code {proc.returncode}"})
-                eq.put({"complete": True, "success": False})
-                return
-
-            eq.put({"stage": stage_id, "name": stage_name, "status": "done"})
-
-        eq.put({"complete": True, "success": True})
-
-    except Exception as e:
-        eq.put({"complete": True, "success": False, "error": str(e)})
-    finally:
-        eq.put(None)  # sentinel — stop the stream
+    proc.wait()
+    return proc.returncode
 
 
-# ── Request model ────────────────────────────────────────────────
-class RunRequest(BaseModel):
-    url: str
-    max_pages: int = 10
-    max_depth: int = 2
-
-
-# ── Endpoints ────────────────────────────────────────────────────
-
-@app.post("/api/run")
-async def run_pipeline(body: RunRequest):
-    """Start the pipeline and stream stage progress as SSE."""
+def _make_stream(runner_fn):
     if not _pipeline_lock.acquire(blocking=False):
-        raise HTTPException(409, "A pipeline run is already in progress.")
+        raise HTTPException(409, "Another pipeline job is already running.")
 
     eq: queue.Queue = queue.Queue()
 
-    threading.Thread(
-        target=_run_pipeline,
-        args=(body.url, body.max_pages, body.max_depth, eq),
-        daemon=True,
-    ).start()
+    def target():
+        try:
+            runner_fn(eq)
+        except Exception as e:
+            eq.put({"type": "error", "text": str(e)})
+            eq.put({"type": "done", "success": False})
+        finally:
+            eq.put(None)
+
+    threading.Thread(target=target, daemon=True).start()
 
     async def event_stream():
         try:
             while True:
                 try:
-                    event = eq.get_nowait()
+                    evt = eq.get_nowait()
                 except queue.Empty:
-                    await asyncio.sleep(0.15)
+                    await asyncio.sleep(0.05)
                     continue
-
-                if event is None:
+                if evt is None:
                     break
-                yield f"data: {json.dumps(event)}\n\n"
+                yield f"data: {json.dumps(evt)}\n\n"
         finally:
             _pipeline_lock.release()
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
 
+class CrawlRequest(BaseModel):
+    url: str
+    max_pages: int = 10
+    max_depth: int = 2
+
+class EmptyRequest(BaseModel):
+    pass
+
+
+@app.post("/api/crawl")
+async def run_crawl(body: CrawlRequest):
+    url = body.url.strip()
+    if not url.startswith("http"):
+        url = "https://" + url
+
+    def runner(eq):
+        eq.put({"type": "phase", "phase": "crawl", "text": f"Starting crawler → {url}"})
+        rc = _stream_script(
+            "the_crawler.py",
+            f"{url}\n{body.max_depth}\n{body.max_pages}\n",
+            eq, "crawl",
+        )
+        if rc != 0:
+            eq.put({"type": "error", "text": f"Crawler exited with code {rc}"})
+            eq.put({"type": "done", "success": False})
+        else:
+            eq.put({"type": "done", "success": True, "phase": "crawl"})
+
+    return _make_stream(runner)
+
+
+@app.post("/api/process")
+async def run_process(body: EmptyRequest = None):
+    def runner(eq):
+        eq.put({"type": "phase", "phase": "process", "text": "Starting processing pipeline…"})
+        time.sleep(3)
+        rc = _stream_script("run_tester.py", None, eq, "process")
+        if rc != 0:
+            eq.put({"type": "error", "text": f"Processing exited with code {rc}"})
+            eq.put({"type": "done", "success": False})
+        else:
+            eq.put({"type": "done", "success": True, "phase": "process"})
+
+    return _make_stream(runner)
+
+
+@app.post("/api/generate-report")
+async def run_report(body: EmptyRequest = None):
+    def runner(eq):
+        eq.put({"type": "phase", "phase": "report", "text": "Building PDF report…"})
+        time.sleep(3)
+        rc = _stream_script("report_generator.py", None, eq, "report")
+        if rc != 0:
+            eq.put({"type": "error", "text": f"Report generator exited with code {rc}"})
+            eq.put({"type": "done", "success": False})
+        else:
+            eq.put({"type": "done", "success": True, "phase": "report"})
+
+    return _make_stream(runner)
+
+
 @app.get("/api/results")
 async def get_results():
-    """Return validated test cases + pipeline metadata."""
     validated_path = BASE_DIR / "data" / "validated_test_cases.json"
     rejected_path  = BASE_DIR / "data" / "rejected_test_cases.json"
     snapshot_path  = BASE_DIR / "data" / "ai_exploration_snapshot.json"
 
     if not validated_path.exists():
-        return {"generated_tests": [], "meta": {}}
+        return {"tests": [], "meta": {}}
 
     with open(validated_path, encoding="utf-8") as f:
-        data = json.load(f)
-    validated = data.get("generated_tests", [])
+        vdata = json.load(f)
+    tests = vdata.get("generated_tests", [])
 
     rejected_count = 0
     if rejected_path.exists():
@@ -169,42 +178,52 @@ async def get_results():
             rejected_count = len(json.load(f).get("rejected_tests", []))
 
     pages_count = 0
+    elements_count = 0
+    target_url = ""
     if snapshot_path.exists():
         with open(snapshot_path, encoding="utf-8") as f:
-            pages_count = json.load(f).get("metadata", {}).get("total_pages", 0)
+            snap = json.load(f)
+        pages_count = snap.get("metadata", {}).get("total_pages", 0)
+        for page in snap.get("pages", []):
+            for items in page.get("ui_inventory", {}).values():
+                elements_count += len(items)
+        first_page = snap.get("pages", [{}])[0] if snap.get("pages") else {}
+        target_url = first_page.get("page_context", {}).get("url", "")
 
-    total = len(validated) + rejected_count
-    pass_rate = round(len(validated) / max(total, 1) * 100, 1) if total else 0
+    total_gen = len(tests) + rejected_count
+    val_rate  = round(len(tests) / max(total_gen, 1) * 100, 1) if total_gen else 0
 
     return {
-        "generated_tests": validated,
+        "tests": tests,
         "meta": {
-            "total_validated":      len(validated),
-            "total_rejected":       rejected_count,
-            "total_generated":      total,
-            "pages_crawled":        pages_count,
-            "validation_pass_rate": pass_rate,
+            "target_url":      target_url,
+            "pages_crawled":   pages_count,
+            "elements_found":  elements_count,
+            "total_generated": total_gen,
+            "total_validated": len(tests),
+            "total_rejected":  rejected_count,
+            "validation_rate": val_rate,
         },
     }
 
 
-@app.get("/api/report")
-async def get_report():
-    """Download the generated PDF report."""
+@app.get("/api/download")
+async def download_report():
     report_path = BASE_DIR / "reports" / "test_report.pdf"
     if not report_path.exists():
-        raise HTTPException(404, "Report not yet generated. Run the pipeline first.")
-    return FileResponse(str(report_path), filename="test_report.pdf",
-                        media_type="application/pdf")
+        raise HTTPException(404, "Report not yet generated.")
+    return FileResponse(str(report_path), filename="test_report.pdf", media_type="application/pdf")
 
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "pipeline_busy": not _pipeline_lock.acquire(blocking=False)
-            or (_pipeline_lock.release() or False)}
+    busy = not _pipeline_lock.acquire(blocking=False)
+    if not busy:
+        _pipeline_lock.release()
+    return {"status": "ok", "busy": busy}
 
 
 if __name__ == "__main__":
     import uvicorn
-    print("Starting AI Test Generator API on http://localhost:8000")
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    print("QA Engine API → http://localhost:8001")
+    uvicorn.run(app, host="0.0.0.0", port=8001, log_level="info")
