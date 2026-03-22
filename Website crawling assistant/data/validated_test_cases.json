@@ -2,477 +2,717 @@
   "generated_tests": [
     {
       "id": "VT-01",
-      "goal": "Break email input with long string",
+      "goal": "Break the loan calculator with a very large loan amount",
       "steps": [
-        "Navigate to '/'",
-        "Enter '999999999999999999999999999999999999999999999999999999999999999' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '999999999' into 'cloanamount'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-02",
-      "goal": "Poison email input with special characters",
+      "goal": "Poison the interest calculator with a negative interest rate",
       "steps": [
-        "Navigate to '/login'",
-        "Enter '!@#$%^&*()' into 'Your email'",
-        "Click 'Sign In'"
+        "Navigate to '/interest-calculator.html'",
+        "Enter '-0.01' into 'cinterestrate'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or login failure"
+      "expected": "Error message or incorrect calculation"
     },
     {
       "id": "VT-03",
-      "goal": "Exceed max limit of email input",
+      "goal": "Overflow the payment calculator with a very large loan term",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'a' 256 times into 'Your email'",
-        "Click 'Create Account'"
+        "Navigate to '/payment-calculator.html'",
+        "Enter '100000' into 'cloanterm'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-04",
-      "goal": "Cross-field contamination with extra characters",
+      "goal": "Contaminate the auto loan calculator with a non-numeric trade-in value",
       "steps": [
-        "Navigate to '/about'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Copy and paste 'test@example.com ' with extra space into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter 'abc' into 'ctradeinvalue'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-05",
-      "goal": "Empty required email field",
+      "goal": "Break the retirement calculator with a very large annual savings amount",
       "steps": [
-        "Navigate to '/services'",
-        "Leave 'Your email' empty",
-        "Click 'Dismiss'"
+        "Navigate to '/retirement-calculator.html'",
+        "Enter '999999999' into 'cannualsave'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-06",
-      "goal": "Whitespaces-only in email input",
+      "goal": "Poison the amortization calculator with a negative loan amount",
       "steps": [
-        "Navigate to '/services/weddings'",
-        "Enter '   ' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/amortization-calculator.html'",
+        "Enter '-1000' into 'cloanamount'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or incorrect calculation"
     },
     {
       "id": "VT-07",
-      "goal": "Min limit of email input",
+      "goal": "Overflow the mortgage calculator with a very large home price",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'a' into 'Your email'",
-        "Click 'Sign In'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '1000000000' into 'chouseprice'",
+        "Click 'Get pre-approval'"
       ],
-      "expected": "Error message or login failure"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-08",
-      "goal": "Input with leading and trailing spaces",
+      "goal": "Contaminate the financial calculator with a non-numeric search term",
       "steps": [
-        "Navigate to '/register'",
-        "Enter ' test@example.com ' into 'Your email'",
-        "Click 'Create Account'"
+        "Navigate to '/financial-calculator.html'",
+        "Enter 'abc' into 'calcSearchTerm'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-09",
-      "goal": "Test form abandonment on login page",
+      "goal": "Break the calculator on the main page with a very large search term",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Enter 'on' into 'on'",
-        "Navigate to '/register'"
+        "Navigate to '/'",
+        "Enter '999999999999999999' into 'calcSearchTerm'",
+        "Click 'Search'"
       ],
-      "expected": "Form fields are cleared"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-10",
-      "goal": "Verify state persistence on register page",
+      "goal": "Poison the sign-in page with a very large email address",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Enter 'on' into 'on'",
-        "Navigate to '/about'",
-        "Navigate back to '/register'"
+        "Navigate to '/my-account/sign-in.php'",
+        "Enter 'a' * 1000 into 'email'",
+        "Click 'submit'"
       ],
-      "expected": "Form fields retain values"
+      "expected": "Error message or calculator crash"
     },
     {
       "id": "VT-11",
-      "goal": "Check form reset on services page",
+      "goal": "Test state transition on loan calculator",
       "steps": [
-        "Navigate to '/services'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/services/weddings'",
-        "Navigate back to '/services'"
-      ],
-      "expected": "Form field is cleared"
-    },
-    {
-      "id": "VT-12",
-      "goal": "Test mid-form navigation on root page",
-      "steps": [
-        "Navigate to '/'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/login'",
-        "Navigate back to '/'"
-      ],
-      "expected": "Form field is cleared"
-    },
-    {
-      "id": "VT-13",
-      "goal": "Verify form abandonment on about page",
-      "steps": [
-        "Navigate to '/about'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/services'"
-      ],
-      "expected": "Form field is cleared"
-    },
-    {
-      "id": "VT-14",
-      "goal": "Check state transition on services weddings page",
-      "steps": [
-        "Navigate to '/services/weddings'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/about'",
-        "Navigate back to '/services/weddings'"
-      ],
-      "expected": "Form field retains value"
-    },
-    {
-      "id": "VT-15",
-      "goal": "Test form modification on login page",
-      "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Enter 'on' into 'on'",
-        "Click 'Dismiss'",
-        "Enter 'new@example.com' into 'Your email'"
-      ],
-      "expected": "Form field is updated"
-    },
-    {
-      "id": "VT-16",
-      "goal": "Verify form reset on root page",
-      "steps": [
-        "Navigate to '/'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/register'",
-        "Navigate back to '/'"
-      ],
-      "expected": "Form field is cleared"
-    },
-    {
-      "id": "VT-17",
-      "goal": "Check form abandonment on register page",
-      "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Enter 'on' into 'on'",
-        "Navigate to '/about'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'"
       ],
       "expected": "Form fields are cleared"
     },
     {
-      "id": "VT-18",
-      "goal": "Break the email input with a very large number",
+      "id": "VT-12",
+      "goal": "Test form abandonment on mortgage calculator",
       "steps": [
-        "Navigate to '/'",
-        "Enter '9999999999' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '200000' into 'chouseprice'",
+        "Enter '20' into 'cdownpayment'",
+        "Navigate to '/loan-calculator.html'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Mortgage calculator form is reset"
+    },
+    {
+      "id": "VT-13",
+      "goal": "Test state persistence on interest calculator",
+      "steps": [
+        "Navigate to '/interest-calculator.html'",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Enter '5' into 'cinterestrate'",
+        "Navigate to '/payment-calculator.html'",
+        "Navigate back to '/interest-calculator.html'"
+      ],
+      "expected": "Interest calculator form fields retain values"
+    },
+    {
+      "id": "VT-14",
+      "goal": "Test calculate and modify on auto loan calculator",
+      "steps": [
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '20000' into 'csaleprice'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'",
+        "Enter '6' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator output updates with new loan term"
+    },
+    {
+      "id": "VT-15",
+      "goal": "Test browser back button on retirement calculator",
+      "steps": [
+        "Navigate to '/retirement-calculator.html'",
+        "Enter '30' into 'cagenow'",
+        "Enter '60' into 'cretireage'",
+        "Click 'Search'",
+        "Navigate back to '/retirement-calculator.html'"
+      ],
+      "expected": "Retirement calculator form fields are reset"
+    },
+    {
+      "id": "VT-16",
+      "goal": "Test submit and change inputs on amortization calculator",
+      "steps": [
+        "Navigate to '/amortization-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'",
+        "Enter '6' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator output updates with new loan term"
+    },
+    {
+      "id": "VT-17",
+      "goal": "Test partial form fill on payment calculator",
+      "steps": [
+        "Navigate to '/payment-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Navigate to '/loan-calculator.html'",
+        "Navigate back to '/payment-calculator.html'"
+      ],
+      "expected": "Payment calculator form fields retain values"
+    },
+    {
+      "id": "VT-18",
+      "goal": "Test change value mid-form on financial calculator",
+      "steps": [
+        "Navigate to '/financial-calculator.html'",
+        "Enter 'finance' into 'calcSearchTerm'",
+        "Navigate to '/loan-calculator.html'",
+        "Navigate back to '/financial-calculator.html'"
+      ],
+      "expected": "Financial calculator form field is reset"
     },
     {
       "id": "VT-19",
-      "goal": "Test the email input with a very small decimal",
+      "goal": "Test state transition on mortgage calculator",
       "steps": [
-        "Navigate to '/about'",
-        "Enter '0.0001' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '200000' into 'chouseprice'",
+        "Enter '20' into 'cdownpayment'",
+        "Click 'Get pre-approval'",
+        "Navigate to '/loan-calculator.html'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Mortgage calculator form is reset"
     },
     {
       "id": "VT-20",
-      "goal": "Probe the email input with zero",
+      "goal": "Test form abandonment on interest calculator",
       "steps": [
-        "Navigate to '/services'",
-        "Enter '0' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/interest-calculator.html'",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Enter '5' into 'cinterestrate'",
+        "Navigate to '/payment-calculator.html'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Interest calculator form is reset"
     },
     {
       "id": "VT-21",
-      "goal": "Break the email input with one below minimum",
+      "goal": "Break the loan calculator with minimum loan amount",
       "steps": [
-        "Navigate to '/services/weddings'",
-        "Enter '-1' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '0' into 'cloanamount'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-22",
-      "goal": "Test the email input with one above maximum",
+      "goal": "Break the loan calculator with maximum loan amount",
       "steps": [
-        "Navigate to '/'",
-        "Enter '2147483648' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '9999999999' into 'cloanamount'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-23",
-      "goal": "Probe the email input with exact minimum allowed value",
+      "goal": "Break the loan calculator with minimum loan term",
       "steps": [
-        "Navigate to '/about'",
-        "Enter '1' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '0' into 'cloanterm'",
+        "Click 'Search'"
       ],
-      "expected": "Input field acceptance"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-24",
-      "goal": "Break the email input with exact maximum allowed value",
+      "goal": "Break the loan calculator with maximum loan term",
       "steps": [
-        "Navigate to '/services'",
-        "Enter '2147483647' into 'Your email'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '999' into 'cloanterm'",
+        "Click 'Search'"
       ],
-      "expected": "Input field acceptance"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-25",
-      "goal": "Test the on input with a very large number on the login page",
+      "goal": "Break the loan calculator with very small interest rate",
       "steps": [
-        "Navigate to '/login'",
-        "Enter '9999999999' into 'on'",
-        "Click 'Sign In'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '0.0001' into 'cinterestrate'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-26",
-      "goal": "Probe the on input with zero on the register page",
+      "goal": "Break the loan calculator with very large interest rate",
       "steps": [
-        "Navigate to '/register'",
-        "Enter '0' into 'on'",
-        "Click 'Create Account'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '999' into 'cinterestrate'",
+        "Click 'Search'"
       ],
-      "expected": "Error message or input field rejection"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-27",
-      "goal": "Break navigation between login and register pages",
+      "goal": "Break the mortgage calculator with minimum house price",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Dismiss'",
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '0' into 'chouseprice'",
+        "Click 'Get pre-approval'"
       ],
-      "expected": "Registration form is populated with previously entered email"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-28",
-      "goal": "Disrupt about page with dismiss button",
+      "goal": "Break the mortgage calculator with maximum house price",
       "steps": [
-        "Navigate to '/about'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Dismiss'",
-        "Navigate to '/services'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '9999999999' into 'chouseprice'",
+        "Click 'Get pre-approval'"
       ],
-      "expected": "Services page is displayed without errors"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-29",
-      "goal": "Test independent operation of services and weddings pages",
+      "goal": "Break the auto loan calculator with minimum sale price",
       "steps": [
-        "Navigate to '/services'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/services/weddings'",
-        "Enter 'test2@example.com' into 'Your email'"
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '0' into 'csaleprice'",
+        "Click 'Search'"
       ],
-      "expected": "Weddings page has independent email input"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-30",
-      "goal": "Interrupt login flow with navigation to about page",
+      "goal": "Break the interest calculator with minimum starting principle",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/about'",
-        "Click 'Dismiss'"
+        "Navigate to '/interest-calculator.html'",
+        "Enter '0' into 'cstartingprinciple'",
+        "Click 'Search'"
       ],
-      "expected": "Login page is re-displayed with previously entered email"
+      "expected": "Error message or invalid result"
     },
     {
       "id": "VT-31",
-      "goal": "Verify retention of email input across page navigation",
+      "goal": "Break loan calculator by navigating away and back",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/register'",
-        "Navigate back to '/login'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Navigate to '/mortgage-calculator.html'",
+        "Navigate to '/loan-calculator.html'"
       ],
-      "expected": "Login page is displayed with previously entered email"
+      "expected": "Loan amount field is empty"
     },
     {
       "id": "VT-32",
-      "goal": "Test navigation between services and weddings pages with email input",
+      "goal": "Test navigation between calculators",
       "steps": [
-        "Navigate to '/services'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/services/weddings'",
-        "Enter 'test2@example.com' into 'Your email'",
-        "Navigate back to '/services'"
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '20000' into 'csaleprice'",
+        "Navigate to '/interest-calculator.html'",
+        "Enter '5000' into 'cstartingprinciple'",
+        "Navigate to '/auto-loan-calculator.html'"
       ],
-      "expected": "Services page is displayed with original email input"
+      "expected": "Sale price field is empty"
     },
     {
       "id": "VT-33",
-      "goal": "Break register page with dismiss button and navigation",
+      "goal": "Verify independent operation of multiple calculators",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Dismiss'",
-        "Navigate to '/login'"
+        "Navigate to '/payment-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Navigate to '/retirement-calculator.html'",
+        "Enter '30' into 'cagenow'",
+        "Navigate to '/payment-calculator.html'"
       ],
-      "expected": "Login page is displayed without errors"
+      "expected": "Loan amount field is empty"
     },
     {
       "id": "VT-34",
-      "goal": "Test independent operation of about and services pages",
+      "goal": "Test calculation interruption by navigation",
       "steps": [
-        "Navigate to '/about'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/services'",
-        "Enter 'test2@example.com' into 'Your email'"
+        "Navigate to '/amortization-calculator.html'",
+        "Enter '20000' into 'cloanamount'",
+        "Navigate to '/financial-calculator.html'",
+        "Navigate to '/amortization-calculator.html'"
       ],
-      "expected": "Services page has independent email input"
+      "expected": "Loan amount field is empty"
     },
     {
       "id": "VT-35",
-      "goal": "Interrupt register flow with navigation to login page",
+      "goal": "Break calculator by changing mode and navigating back",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Navigate to '/login'",
-        "Click 'Dismiss'"
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '300000' into 'chouseprice'",
+        "Click 'Get pre-approval'",
+        "Navigate to '/loan-calculator.html'",
+        "Navigate to '/mortgage-calculator.html'"
       ],
-      "expected": "Register page is re-displayed with previously entered email"
+      "expected": "House price field is empty"
     },
     {
       "id": "VT-36",
-      "goal": "Break mode switching on login page",
+      "goal": "Test navigation between related pages",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Sign In'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '5000' into 'cloanamount'",
+        "Click 'Search'",
+        "Navigate to '/financial-calculator.html'",
+        "Navigate to '/loan-calculator.html'"
       ],
-      "expected": "Login form resets"
+      "expected": "Loan amount field is empty"
     },
     {
       "id": "VT-37",
-      "goal": "Test rapid mode switching on register page",
+      "goal": "Verify calculation retention after navigation",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Create Account'",
-        "Click 'Dismiss'",
-        "Click 'Create Account'"
+        "Navigate to '/interest-calculator.html'",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Navigate to '/payment-calculator.html'",
+        "Navigate to '/interest-calculator.html'"
       ],
-      "expected": "No UI flicker or errors"
+      "expected": "Starting principle field is empty"
     },
     {
       "id": "VT-38",
-      "goal": "Verify mode switch retains values on login page",
+      "goal": "Break calculator by opening multiple instances",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Dismiss'",
-        "Click 'Sign In'"
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '15000' into 'csaleprice'",
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '20000' into 'csaleprice'",
+        "Navigate to '/auto-loan-calculator.html'"
       ],
-      "expected": "Email value retained"
+      "expected": "Sale price field is empty"
     },
     {
       "id": "VT-39",
-      "goal": "Break mode switching with incomplete form on register page",
+      "goal": "Test navigation between calculators with search",
       "steps": [
-        "Navigate to '/register'",
-        "Click 'Create Account'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Create Account'"
+        "Navigate to '/financial-calculator.html'",
+        "Enter 'mortgage' into 'calcSearchTerm'",
+        "Click 'Search'",
+        "Navigate to '/mortgage-calculator.html'",
+        "Navigate to '/financial-calculator.html'"
       ],
-      "expected": "Form submission fails"
+      "expected": "Search term field is empty"
     },
     {
       "id": "VT-40",
-      "goal": "Test mode switch before filling form on login page",
+      "goal": "Verify calculation interruption by header link",
       "steps": [
-        "Navigate to '/login'",
-        "Click 'Sign In'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Sign In'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '8000' into 'cloanamount'",
+        "Navigate to '/'",
+        "Navigate to '/loan-calculator.html'"
       ],
-      "expected": "Login fails"
+      "expected": "Loan amount field is empty"
     },
     {
       "id": "VT-41",
-      "goal": "Verify mode switch changes labels correctly on register page",
+      "goal": "Break loan calculator by switching between two calculation modes",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Create Account'",
-        "Click 'Dismiss'"
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '10000' into 'c2loanamount'",
+        "Enter '5' into 'c2loanterm'",
+        "Click 'Search'"
       ],
-      "expected": "Labels change correctly"
+      "expected": "Calculator displays correct results for both loan amounts"
     },
     {
       "id": "VT-42",
-      "goal": "Break rapid mode switching on login page",
+      "goal": "Test mode switching in interest calculator",
       "steps": [
-        "Navigate to '/login'",
-        "Click 'Sign In'",
-        "Click 'Dismiss'",
-        "Click 'Sign In'",
-        "Click 'Dismiss'"
+        "Navigate to '/interest-calculator.html'",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Enter '5' into 'cyears'",
+        "Click 'Clear'",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Enter '5' into 'cyears'",
+        "Click 'Search'"
       ],
-      "expected": "No UI errors or crashes"
+      "expected": "Calculator displays correct interest results"
     },
     {
       "id": "VT-43",
-      "goal": "Test mode switch with multiple form submissions on register page",
+      "goal": "Rapidly apply and unapply a mode in payment calculator",
       "steps": [
-        "Navigate to '/register'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Create Account'",
-        "Click 'Create Account'"
+        "Navigate to '/payment-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'x'",
+        "Click 'Clear'",
+        "Click 'Search'"
       ],
-      "expected": "No duplicate submissions"
+      "expected": "Calculator does not display any errors"
     },
     {
       "id": "VT-44",
-      "goal": "Verify mode switch retains state on login page",
+      "goal": "Test UI state changes in retirement calculator",
       "steps": [
-        "Navigate to '/login'",
-        "Enter 'test@example.com' into 'Your email'",
-        "Click 'Sign In'",
-        "Click 'Dismiss'",
-        "Click 'Sign In'"
+        "Navigate to '/retirement-calculator.html'",
+        "Enter '30' into 'cagenow'",
+        "Enter '65' into 'cretireage'",
+        "Click 'Clear'",
+        "Enter '30' into 'cagenow'",
+        "Enter '65' into 'cretireage'",
+        "Click 'Search'"
       ],
-      "expected": "State retained correctly"
+      "expected": "Calculator displays correct retirement results"
+    },
+    {
+      "id": "VT-45",
+      "goal": "Switch between two calculation modes in amortization calculator",
+      "steps": [
+        "Navigate to '/amortization-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator displays correct amortization results"
+    },
+    {
+      "id": "VT-46",
+      "goal": "Test mode switching in auto loan calculator",
+      "steps": [
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '10000' into 'csaleprice'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '10000' into 'csaleprice'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator displays correct auto loan results"
+    },
+    {
+      "id": "VT-47",
+      "goal": "Rapidly apply and unapply a mode in mortgage calculator",
+      "steps": [
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '100000' into 'chouseprice'",
+        "Enter '20' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '100000' into 'chouseprice'",
+        "Enter '20' into 'cloanterm'",
+        "Click 'x'",
+        "Click 'Clear'",
+        "Click 'Get pre-approval'"
+      ],
+      "expected": "Calculator does not display any errors"
+    },
+    {
+      "id": "VT-48",
+      "goal": "Test UI state changes in financial calculator",
+      "steps": [
+        "Navigate to '/financial-calculator.html'",
+        "Click 'Search'",
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator displays correct financial results"
+    },
+    {
+      "id": "VT-49",
+      "goal": "Break calculator by switching between two calculation modes rapidly",
+      "steps": [
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'",
+        "Click 'Clear'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculator does not crash or display any errors"
+    },
+    {
+      "id": "VT-50",
+      "goal": "Test mode switching in all calculators",
+      "steps": [
+        "Navigate to '/loan-calculator.html'",
+        "Enter '10000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Clear'",
+        "Navigate to '/mortgage-calculator.html'",
+        "Enter '100000' into 'chouseprice'",
+        "Enter '20' into 'cloanterm'",
+        "Click 'Get pre-approval'",
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '10000' into 'csaleprice'",
+        "Enter '5' into 'cloanterm'",
+        "Click 'Search'"
+      ],
+      "expected": "All calculators display correct results"
+    },
+    {
+      "id": "VT-51",
+      "goal": "Trigger calculation error and verify recovery",
+      "steps": [
+        "Navigate to '/loan-calculator.html'",
+        "Enter '0' into 'c2loanamount'",
+        "Click 'Search'",
+        "Enter '100' into 'c2loanamount'",
+        "Click 'Search'"
+      ],
+      "expected": "Calculation result is displayed without errors"
+    },
+    {
+      "id": "VT-52",
+      "goal": "Test error handling for empty form submission",
+      "steps": [
+        "Navigate to '/mortgage-calculator.html'",
+        "Click 'Get pre-approval'",
+        "Note error message",
+        "Enter '100000' into 'chouseprice'",
+        "Click 'Get pre-approval'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
+    },
+    {
+      "id": "VT-53",
+      "goal": "Verify invalid input error recovery",
+      "steps": [
+        "Navigate to '/interest-calculator.html'",
+        "Enter '-1' into 'cstartingprinciple'",
+        "Click 'Search'",
+        "Note error message",
+        "Enter '1000' into 'cstartingprinciple'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
+    },
+    {
+      "id": "VT-54",
+      "goal": "Test divide by zero error handling",
+      "steps": [
+        "Navigate to '/'",
+        "Enter '0' into 'scirdsetting'",
+        "Click '/'",
+        "Note error message",
+        "Enter '1' into 'scirdsetting'",
+        "Click '/'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
+    },
+    {
+      "id": "VT-55",
+      "goal": "Verify clear all fields functionality",
+      "steps": [
+        "Navigate to '/payment-calculator.html'",
+        "Enter '1000' into 'cloanamount'",
+        "Enter '5' into 'cloanterm'",
+        "Enter '5' into 'cinterestrate'",
+        "Click 'Search'",
+        "Click 'Clear'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is displayed for empty form submission"
+    },
+    {
+      "id": "VT-56",
+      "goal": "Test reset functionality after successful calculation",
+      "steps": [
+        "Navigate to '/auto-loan-calculator.html'",
+        "Enter '20000' into 'csaleprice'",
+        "Enter '5' into 'cloanterm'",
+        "Enter '5' into 'cinterestrate'",
+        "Click 'Search'",
+        "Click 'x'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is displayed for empty form submission"
+    },
+    {
+      "id": "VT-57",
+      "goal": "Verify error handling for invalid input and subsequent valid input",
+      "steps": [
+        "Navigate to '/retirement-calculator.html'",
+        "Enter '-1' into 'cagenow'",
+        "Click 'Search'",
+        "Note error message",
+        "Enter '30' into 'cagenow'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
+    },
+    {
+      "id": "VT-58",
+      "goal": "Test calculation error recovery after invalid input",
+      "steps": [
+        "Navigate to '/amortization-calculator.html'",
+        "Enter '0' into 'cloanamount'",
+        "Click 'Search'",
+        "Note error message",
+        "Enter '1000' into 'cloanamount'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
+    },
+    {
+      "id": "VT-59",
+      "goal": "Verify error handling for empty form submission after successful calculation",
+      "steps": [
+        "Navigate to '/financial-calculator.html'",
+        "Enter '100' into 'calcSearchTerm'",
+        "Click 'Search'",
+        "Click 'Clear'",
+        "Click 'Search'"
+      ],
+      "expected": "Error message is displayed for empty form submission"
+    },
+    {
+      "id": "VT-60",
+      "goal": "Test error recovery after division by zero error",
+      "steps": [
+        "Navigate to '/'",
+        "Enter '1' into 'scirdsetting'",
+        "Click '1/x'",
+        "Enter '0' into 'scirdsetting'",
+        "Click '1/x'",
+        "Note error message",
+        "Enter '1' into 'scirdsetting'",
+        "Click '1/x'"
+      ],
+      "expected": "Error message is cleared and calculation result is displayed"
     }
   ]
 }

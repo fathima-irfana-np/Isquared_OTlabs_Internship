@@ -16,6 +16,7 @@ import subprocess
 import sys
 import threading
 import time
+import re
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -232,6 +233,28 @@ async def download_report():
         raise HTTPException(404, "Report not yet generated.")
     return FileResponse(str(report_path), filename="test_report.pdf", media_type="application/pdf")
 
+
+
+@app.get("/api/execution-results")
+async def get_execution_results():
+    """Parse Gauge HTML report and return pass/fail per scenario."""
+    html_path = BASE_DIR / "reports" / "html-report" / "specs" / "ai_exploration.html"
+    if not html_path.exists():
+        return {"results": {}, "passed": 0, "failed": 0, "total": 0}
+    with open(html_path, encoding="utf-8") as f:
+        content = f.read()
+    blocks = re.findall(
+        r'<div class="scenario-container (passed|failed)".*?<h3 class="head borderBottom">(.*?)</h3>',
+        content, re.DOTALL
+    )
+    results = {}
+    for status, name in blocks:
+        m = re.match(r'(VT-\d+)', name.strip())
+        if m:
+            results[m.group(1)] = status
+    passed = sum(1 for v in results.values() if v == "passed")
+    failed = sum(1 for v in results.values() if v == "failed")
+    return {"results": results, "passed": passed, "failed": failed, "total": len(results)}
 
 @app.get("/api/health")
 async def health():

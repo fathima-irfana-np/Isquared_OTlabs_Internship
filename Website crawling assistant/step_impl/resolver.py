@@ -54,7 +54,10 @@ class SmartResolver:
         return None
 
     def smart_click(self, intent: str):
-        print(f"Propagating Click Intent: '{intent}'")
+        try:
+            print(f"Propagating Click Intent: '{intent}'")
+        except UnicodeEncodeError:
+            print("Propagating Click Intent: '[unicode label]'")
         el = self.resolve_actionable_element(intent, roles=["button", "link", "tab"])
         if el:
             el.click()
@@ -63,7 +66,10 @@ class SmartResolver:
         return False
 
     def smart_fill(self, intent: str, value: str):
-        print(f"Propagating Fill Intent: '{intent}' -> '{value}'")
+        try:
+            print(f"Propagating Fill Intent: '{intent}' -> '{value}'")
+        except UnicodeEncodeError:
+            print("Propagating Fill Intent: '[unicode label]' -> '[value]'")
         el = self.resolve_actionable_element(intent, find_input=True)
         if el:
             try:

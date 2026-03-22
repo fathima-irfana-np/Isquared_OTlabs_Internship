@@ -23,6 +23,7 @@ TEMPLATE_HEADER = '''from getgauge.python import step, before_suite, after_suite
 from playwright.sync_api import sync_playwright
 from step_impl.resolver import SmartResolver
 import os
+import re
 import sys
 import time
 
@@ -74,7 +75,6 @@ def teardown():
 def do_navigate(path):
     """Navigate to a page by path or name."""
     if path.startswith("/") or path.startswith("http"):
-        # Absolute or relative path - construct full URL
         if path.startswith("/"):
             current_url = State.page.url
             from urllib.parse import urlparse
@@ -100,14 +100,92 @@ def do_press(key):
     else:
         State.resolver.smart_click(key)
 
+def do_verify(expectation):
+    """
+    Real assertion — actually checks the page instead of just printing.
+    Raises AssertionError (Gauge marks test FAILED) when expectation not met.
+    """
+    State.page.wait_for_timeout(1500)
+    State.page.screenshot(path=\'reports/verify_\' + str(int(time.time())) + \'.png\')
+
+    exp        = expectation.lower()
+    page_text  = State.page.inner_text(\'body\').lower()
+    current_url= State.page.url.lower()
+    print(f\'[VERIFY] Checking: {expectation}\')
+    print(f\'[VERIFY] URL: {State.page.url}\')
+
+    ERROR_WORDS   = [\'error\', \'fail\', \'invalid\', \'reject\', \'required\',
+                     \'too long\', \'too short\', \'incorrect\', \'not allowed\', \'missing\']
+    SUCCESS_WORDS = [\'success\', \'successfully\', \'sent\', \'created\',
+                     \'welcome\', \'registered\', \'logged in\', \'confirmed\']
+    RETAIN_WORDS  = [\'retain\', \'persist\', \'populated\', \'still has\', \'unchanged\']
+    CLEAR_WORDS   = [\'clear\', \'empty\', \'reset\', \'blank\', \'removed\']
+
+    # 1. Expect an error / failure
+    if any(w in exp for w in ERROR_WORDS):
+        has_success = bool(re.search(
+            r\'success|successfully|sent|created|welcome|registered|logged in|confirmed\',
+            page_text))
+        has_error = bool(re.search(
+            r\'error|invalid|required|failed|incorrect|too (long|short)|must be|cannot|not allowed\',
+            page_text))
+        if has_success and not has_error:
+            raise AssertionError(
+                f\'FAIL: Expected error/failure but page shows SUCCESS.\\n\'
+                f\'Expected: {expectation}\\nPage snippet: {page_text[:300]}\')
+        print(f\'[VERIFY] PASS - error/failure confirmed\')
+        return
+
+    # 2. Expect success
+    if any(w in exp for w in SUCCESS_WORDS):
+        has_success = bool(re.search(
+            r\'success|successfully|sent|created|welcome|registered|logged in|confirmed|thank you\',
+            page_text))
+        url_ok = any(s in current_url for s in [\'dashboard\', \'welcome\', \'success\', \'home\', \'thank\'])
+        if not has_success and not url_ok:
+            raise AssertionError(
+                f\'FAIL: Expected success but page does not show it.\\n\'
+                f\'Expected: {expectation}\\nPage snippet: {page_text[:300]}\')
+        print(f\'[VERIFY] PASS - success confirmed\')
+        return
+
+    # 3. Expect fields retained
+    if any(w in exp for w in RETAIN_WORDS):
+        inputs = State.page.locator(\'input[type="text"], input[type="email"], input[type="password"], textarea\')
+        has_value = any(
+            inputs.nth(i).input_value().strip()
+            for i in range(inputs.count())
+        )
+        if not has_value:
+            raise AssertionError(
+                f\'FAIL: Expected field values to be retained but all fields appear empty.\\n\'
+                f\'Expected: {expectation}\')
+        print(f\'[VERIFY] PASS - field values retained\')
+        return
+
+    # 4. Expect fields cleared
+    if any(w in exp for w in CLEAR_WORDS):
+        inputs = State.page.locator(\'input[type="text"], input[type="email"], input[type="password"], textarea\')
+        all_clear = all(
+            not inputs.nth(i).input_value().strip()
+            for i in range(inputs.count())
+        )
+        if not all_clear:
+            raise AssertionError(
+                f\'FAIL: Expected fields to be cleared but some still have values.\\n\'
+                f\'Expected: {expectation}\')
+        print(f\'[VERIFY] PASS - fields cleared\')
+        return
+
+    # 5. Fallback — screenshot only, no assertion
+    print(f\'[VERIFY] INFO: No specific rule for "{expectation}" — screenshot saved\')
+
 '''
 
 
 def make_func_name(step_text, index):
     """Generate a unique, deterministic function name from step text."""
-    # Create a short hash for uniqueness
     h = hashlib.md5(step_text.encode()).hexdigest()[:6]
-    # Clean the step text for a readable prefix
     clean = re.sub(r'[^a-zA-Z0-9]', '_', step_text[:30]).lower().strip('_')
     clean = re.sub(r'_+', '_', clean)
     return "step_" + clean + "_" + h
@@ -142,7 +220,7 @@ def parse_step_pattern(step_text):
     if wait_match:
         ms = int(wait_match.group(1))
         if ms < 100:
-            ms = ms * 1000  # Convert seconds to ms
+            ms = ms * 1000
         return "    State.page.wait_for_timeout(" + str(ms) + ")"
 
     # Pattern: Type 'text'
@@ -157,26 +235,17 @@ def parse_step_pattern(step_text):
         key = press_match.group(1)
         return "    do_press('" + key.replace("'", "\\'") + "')"
 
-    # Pattern: Verify: expected outcome
+    # Pattern: Verify: expected outcome  ← FIXED: real assertion now
     verify_match = re.match(r"^Verify:\s*(.+)$", step_text)
     if verify_match:
         expectation = verify_match.group(1).replace("'", "\\'")
-        return (
-            "    print('[VERIFY] Expected: " + expectation + "')\n"
-            "    State.page.wait_for_timeout(1000)\n"
-            "    State.page.screenshot(path='reports/verify_' + str(int(time.time())) + '.png')"
-        )
+        return "    do_verify('" + expectation + "')"
 
     # Fallback: try smart_click with the full text
     return "    State.resolver.smart_click('" + step_text.replace("'", "\\'") + "')"
 
 
 def escape_step_for_decorator(step_text):
-    """
-    Escape a step text for use in a @step decorator.
-    Gauge treats <text> as dynamic parameters, so we need to handle this.
-    """
-    # Replace angle brackets with escaped versions for Gauge
     return step_text
 
 
@@ -192,13 +261,11 @@ def main():
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Collect unique steps (including Verify steps from expected field)
     unique_steps = set()
     for test in data.get("generated_tests", []):
         steps = test.get("steps", [])
         expected = test.get("expected", "")
 
-        # Skip tests with angle brackets (same filter as json_to_gauge.py)
         all_text = " ".join(steps) + " " + expected
         if "<" in all_text or ">" in all_text:
             continue
@@ -206,14 +273,12 @@ def main():
         for step_text in steps:
             unique_steps.add(step_text)
 
-        # Construct the Verify step (same as json_to_gauge.py)
         if expected:
             unique_steps.add("Verify: " + expected)
 
     sorted_steps = sorted(list(unique_steps))
     print("Found " + str(len(sorted_steps)) + " unique steps.")
 
-    # Generate implementations
     implementations = []
     for i, step_text in enumerate(sorted_steps):
         func_name = make_func_name(step_text, i)
@@ -226,7 +291,6 @@ def main():
 
         implementations.append(impl)
 
-    # Write output
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(TEMPLATE_HEADER)
         f.write("# --- Generated Step Implementations ---\n\n")
