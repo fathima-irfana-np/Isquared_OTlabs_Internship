@@ -2,8 +2,10 @@
 QA Engine — FastAPI Backend
 POST /api/crawl           → runs the_crawler.py
 POST /api/process         → runs run_tester.py
+POST /api/execute         → runs gauge run specs
 POST /api/generate-report → runs report_generator.py
 GET  /api/results         → validated test cases + meta
+GET  /api/execution-results → pass/fail per scenario
 GET  /api/download        → serves PDF
 GET  /api/health          → health check
 """
@@ -159,6 +161,40 @@ async def run_process(body: EmptyRequest = None):
             eq.put({"type": "done", "success": False})
         else:
             eq.put({"type": "done", "success": True, "phase": "process"})
+
+    return _make_stream(runner)
+
+
+@app.post("/api/execute")
+async def run_execute(body: EmptyRequest = None):
+    def runner(eq):
+        eq.put({"type": "phase", "phase": "execute", "text": "Running Gauge specs…"})
+        proc = subprocess.Popen(
+            ["gauge", "run", "specs"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=0,
+            cwd=str(BASE_DIR),
+            encoding="utf-8",
+            errors="replace",
+            env=UNBUFFERED_ENV,
+        )
+        for line in proc.stdout:
+            line = line.rstrip()
+            if line:
+                eq.put({"type": "log", "phase": "execute", "text": line})
+        proc.wait()
+        # Gauge exits with code 1 when some tests fail — that's normal,
+        # the tests still ran successfully. Only treat other codes as errors.
+        if proc.returncode not in (0, 1):
+            eq.put({"type": "error", "text": f"Gauge crashed with code {proc.returncode}"})
+            eq.put({"type": "done", "success": False})
+        else:
+            if proc.returncode == 1:
+                eq.put({"type": "log", "phase": "execute",
+                        "text": "Note: Some test scenarios failed (exit code 1) — this is expected."})
+            eq.put({"type": "done", "success": True, "phase": "execute"})
 
     return _make_stream(runner)
 

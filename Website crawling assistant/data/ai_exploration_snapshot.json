@@ -1,1345 +1,1529 @@
 {
   "metadata": {
     "source": "selenium_exploratory_crawler",
-    "generated_at": "2026-03-22 22:15:11",
-    "total_pages": 6
+    "generated_at": "2026-03-24 11:56:27",
+    "total_pages": 10
   },
   "pages": [
     {
       "page_context": {
-        "url": "https://www.calculator.net/",
-        "title": "Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science",
-        "domain": "www.calculator.net",
+        "url": "https://grand-occasion-pro.lovable.app/",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
         "page_path": "/",
-        "page_type": "interactive",
-        "interaction_score": 66,
-        "ui_density": 109
-      },
-      "ui_inventory": {
-        "links": [
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Financial Calculators",
-            "href": "https://www.calculator.net/financial-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Mortgage Calculator",
-            "href": "https://www.calculator.net/mortgage-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Loan Calculator",
-            "href": "https://www.calculator.net/loan-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Auto Loan Calculator",
-            "href": "https://www.calculator.net/auto-loan-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Interest Calculator",
-            "href": "https://www.calculator.net/interest-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Payment Calculator",
-            "href": "https://www.calculator.net/payment-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Retirement Calculator",
-            "href": "https://www.calculator.net/retirement-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Amortization Calculator",
-            "href": "https://www.calculator.net/amortization-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Investment Calculator",
-            "href": "https://www.calculator.net/investment-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Inflation Calculator",
-            "href": "https://www.calculator.net/inflation-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Finance Calculator",
-            "href": "https://www.calculator.net/finance-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Income Tax Calculator",
-            "href": "https://www.calculator.net/tax-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Compound Interest Calculator",
-            "href": "https://www.calculator.net/compound-interest-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Salary Calculator",
-            "href": "https://www.calculator.net/salary-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Interest Rate Calculator",
-            "href": "https://www.calculator.net/interest-rate-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Sales Tax Calculator",
-            "href": "https://www.calculator.net/sales-tax-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Fitness & Health Calculators",
-            "href": "https://www.calculator.net/fitness-and-health-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "BMI Calculator",
-            "href": "https://www.calculator.net/bmi-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Calorie Calculator",
-            "href": "https://www.calculator.net/calorie-calculator.html"
-          }
-        ],
-        "buttons": [
-          {
-            "type": "span",
-            "role": "action",
-            "label": "sin"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "cos"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "tan"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "sin-1"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "cos-1"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "tan-1"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "xy"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "x3"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "x2"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "ex"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "10x"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "y\u221ax"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "3\u221ax"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "\u221ax"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "ln"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "log"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "1/x"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "n!"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "+"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Back"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Ans"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "M+"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "EXP"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "/"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "M-"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "RND"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "AC"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "="
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "MR"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Search"
-          }
-        ],
-        "other_clickables": [
-          {
-            "type": "label",
-            "role": "form_label",
-            "label": "Deg"
-          },
-          {
-            "type": "label",
-            "role": "form_label",
-            "label": "Rad"
-          }
-        ],
-        "inputs": [
-          {
-            "type": "input",
-            "role": "selection",
-            "label": "scirdsetting"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "calcSearchTerm"
-          }
-        ]
-      }
-    },
-    {
-      "page_context": {
-        "url": "https://www.calculator.net/my-account/sign-in.php",
-        "title": "Sign In",
-        "domain": "www.calculator.net",
-        "page_path": "/my-account/sign-in.php",
-        "page_type": "form-heavy",
-        "interaction_score": 16,
-        "ui_density": 23
-      },
-      "ui_inventory": {
-        "links": [
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "home",
-            "href": "https://www.calculator.net/"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Forget password?",
-            "href": "https://www.calculator.net/my-account/forget.php"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Create a free account",
-            "href": "https://www.calculator.net/my-account/create-account.php"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Sign in with Google",
-            "href": "https://www.calculator.net/my-account/google-signup.php"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "about us",
-            "href": "https://www.calculator.net/about-us.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "sitemap",
-            "href": "https://www.calculator.net/sitemap.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "terms of use",
-            "href": "https://www.calculator.net/about-us.html#terms"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "privacy policy",
-            "href": "https://www.calculator.net/about-us.html#privacy"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "FINANCIAL",
-            "href": "https://www.calculator.net/financial-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "FITNESS & HEALTH",
-            "href": "https://www.calculator.net/fitness-and-health-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "MATH",
-            "href": "https://www.calculator.net/math-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "OTHER",
-            "href": "https://www.calculator.net/other-calculator.html"
-          }
-        ],
-        "inputs": [
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "email",
-            "validation": {
-              "maxlength": "100"
-            }
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "password",
-            "validation": {
-              "maxlength": "100"
-            }
-          },
-          {
-            "type": "input",
-            "role": "selection",
-            "label": "rememberme"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "calcSearchTerm"
-          }
-        ],
-        "other_clickables": [
-          {
-            "type": "label",
-            "role": "form_label",
-            "label": "stay signed in"
-          },
-          {
-            "type": "input",
-            "role": "other",
-            "label": "reset"
-          }
-        ],
-        "buttons": [
-          {
-            "type": "input",
-            "role": "action",
-            "label": "submit"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Search"
-          }
-        ]
-      }
-    },
-    {
-      "page_context": {
-        "url": "https://www.calculator.net/financial-calculator.html",
-        "title": "Financial Calculators",
-        "domain": "www.calculator.net",
-        "page_path": "/financial-calculator.html",
         "page_type": "navigation-heavy",
         "interaction_score": 5,
-        "ui_density": 110
+        "ui_density": 33
       },
       "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
         "links": [
           {
             "type": "a",
             "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "home",
-            "href": "https://www.calculator.net/"
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "financial",
-            "href": "https://www.calculator.net/financial-calculator.html"
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Mortgage Calculator",
-            "href": "https://www.calculator.net/mortgage-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Amortization Calculator",
-            "href": "https://www.calculator.net/amortization-calculator.html"
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Mortgage Payoff Calculator",
-            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "House Affordability Calculator",
-            "href": "https://www.calculator.net/house-affordability-calculator.html"
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Rent Calculator",
-            "href": "https://www.calculator.net/rent-calculator.html"
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Debt-to-Income Ratio Calculator",
-            "href": "https://www.calculator.net/debt-ratio-calculator.html"
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Real Estate Calculator",
-            "href": "https://www.calculator.net/real-estate-calculator.html"
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Refinance Calculator",
-            "href": "https://www.calculator.net/refinance-calculator.html"
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Rental Property Calculator",
-            "href": "https://www.calculator.net/rental-property-calculator.html"
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "APR Calculator",
-            "href": "https://www.calculator.net/apr-calculator.html"
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "FHA Loan Calculator",
-            "href": "https://www.calculator.net/fha-loan-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "VA Mortgage Calculator",
-            "href": "https://www.calculator.net/va-mortgage-calculator.html"
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Home Equity Loan Calculator",
-            "href": "https://www.calculator.net/home-equity-loan-calculator.html"
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "HELOC Calculator",
-            "href": "https://www.calculator.net/heloc-calculator.html"
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Down Payment Calculator",
-            "href": "https://www.calculator.net/down-payment-calculator.html"
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Rent vs. Buy Calculator",
-            "href": "https://www.calculator.net/rent-vs-buy-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Auto Loan Calculator",
-            "href": "https://www.calculator.net/auto-loan-calculator.html"
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
           }
         ],
         "inputs": [
           {
             "type": "input",
             "role": "form_input",
-            "label": "calcSearchTerm"
+            "label": "Your email"
           }
         ],
         "buttons": [
           {
-            "type": "span",
+            "type": "button",
             "role": "action",
-            "label": "Search"
+            "label": "Dismiss"
           }
         ]
       }
     },
     {
       "page_context": {
-        "url": "https://www.calculator.net/mortgage-calculator.html",
-        "title": "Mortgage Calculator",
-        "domain": "www.calculator.net",
-        "page_path": "/mortgage-calculator.html",
-        "page_type": "form-heavy",
-        "interaction_score": 57,
-        "ui_density": 71
+        "url": "https://grand-occasion-pro.lovable.app/login",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/login",
+        "page_type": "navigation-heavy",
+        "interaction_score": 10,
+        "ui_density": 34
       },
       "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
         "links": [
           {
             "type": "a",
             "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "home",
-            "href": "https://www.calculator.net/"
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "financial",
-            "href": "https://www.calculator.net/financial-calculator.html"
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "mortgage calculator",
-            "href": "https://www.calculator.net/mortgage-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "House Affordability Calculator",
-            "href": "https://www.calculator.net/house-affordability-calculator.html"
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Loan",
-            "href": "https://www.calculator.net/loan-calculator.html"
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Auto Loan",
-            "href": "https://www.calculator.net/auto-loan-calculator.html"
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Interest",
-            "href": "https://www.calculator.net/interest-calculator.html"
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Payment",
-            "href": "https://www.calculator.net/payment-calculator.html"
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Retirement",
-            "href": "https://www.calculator.net/retirement-calculator.html"
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Amortization",
-            "href": "https://www.calculator.net/amortization-calculator.html"
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Investment",
-            "href": "https://www.calculator.net/investment-calculator.html"
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Currency",
-            "href": "https://www.calculator.net/currency-calculator.html"
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Inflation",
-            "href": "https://www.calculator.net/inflation-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Finance",
-            "href": "https://www.calculator.net/finance-calculator.html"
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Mortgage Payoff",
-            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Income Tax",
-            "href": "https://www.calculator.net/tax-calculator.html"
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Compound Interest",
-            "href": "https://www.calculator.net/compound-interest-calculator.html"
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Salary",
-            "href": "https://www.calculator.net/salary-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "401K",
-            "href": "https://www.calculator.net/401k-calculator.html"
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
           }
         ],
         "inputs": [
           {
             "type": "input",
-            "role": "form_input",
-            "label": "chouseprice"
+            "role": "selection",
+            "label": "on"
           },
           {
             "type": "input",
             "role": "form_input",
-            "label": "cdownpayment"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cloanterm"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cinterestrate"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cstartyear"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cpropertytaxes"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "chomeins"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cpmi"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "choa"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cothercost"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "calcSearchTerm"
-          }
-        ],
-        "dropdowns": [
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cdownpaymentunit"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cstartmonth"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cpropertytaxesunit"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "chomeinsunit"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cpmiunit"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "choaunit"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cothercostunit"
-          }
-        ],
-        "other_clickables": [
-          {
-            "type": "label",
-            "role": "form_label",
-            "label": "Include Taxes & Costs Below"
-          },
-          {
-            "type": "img",
-            "role": "other",
-            "label": "Save this calculation"
+            "label": "Your email"
           }
         ],
         "buttons": [
           {
-            "type": "input",
+            "type": "button",
             "role": "action",
-            "label": "x"
+            "label": "Sign In"
           },
           {
-            "type": "input",
+            "type": "button",
             "role": "action",
-            "label": "Clear"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "See your local rates"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Get pre-approval"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Search"
+            "label": "Dismiss"
           }
         ]
       }
     },
     {
       "page_context": {
-        "url": "https://www.calculator.net/loan-calculator.html",
-        "title": "Loan Calculator",
-        "domain": "www.calculator.net",
-        "page_path": "/loan-calculator.html",
-        "page_type": "form-heavy",
-        "interaction_score": 53,
-        "ui_density": 82
+        "url": "https://grand-occasion-pro.lovable.app/register",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/register",
+        "page_type": "navigation-heavy",
+        "interaction_score": 10,
+        "ui_density": 33
       },
       "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
         "links": [
           {
             "type": "a",
             "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "home",
-            "href": "https://www.calculator.net/"
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "financial",
-            "href": "https://www.calculator.net/financial-calculator.html"
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "loan calculator",
-            "href": "https://www.calculator.net/loan-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Amortized Loan: Fixed payments paid periodically until loan maturity",
-            "href": "https://www.calculator.net/loan-calculator.html#monthlyfixed"
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Deferred Payment Loan: Single lump sum paid at loan maturity",
-            "href": "https://www.calculator.net/loan-calculator.html#intheend"
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Bond: Predetermined lump sum paid at loan maturity (the face or par value of a b",
-            "href": "https://www.calculator.net/loan-calculator.html#fixedend"
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "mortgages",
-            "href": "https://www.calculator.net/mortgage-calculator.html"
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "auto loans",
-            "href": "https://www.calculator.net/auto-loan-calculator.html"
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "student loans",
-            "href": "https://www.calculator.net/student-loan-calculator.html"
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "personal loans",
-            "href": "https://www.calculator.net/personal-loan-calculator.html"
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "FHA Loan Calculator",
-            "href": "https://www.calculator.net/fha-loan-calculator.html"
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "VA Mortgage Calculator",
-            "href": "https://www.calculator.net/va-mortgage-calculator.html"
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Investment Calculator",
-            "href": "https://www.calculator.net/investment-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Business Loan Calculator",
-            "href": "https://www.calculator.net/business-loan-calculator.html"
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Interest Calculator",
-            "href": "https://www.calculator.net/interest-calculator.html"
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "APR Calculator",
-            "href": "https://www.calculator.net/apr-calculator.html"
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Compound Interest Calculator",
-            "href": "https://www.calculator.net/compound-interest-calculator.html"
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Credit Card Calculator",
-            "href": "https://www.calculator.net/credit-card-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Payment",
-            "href": "https://www.calculator.net/payment-calculator.html"
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
           }
         ],
         "inputs": [
           {
             "type": "input",
-            "role": "form_input",
-            "label": "cloanamount"
+            "role": "selection",
+            "label": "on",
+            "validation": {
+              "required": true
+            }
           },
           {
             "type": "input",
             "role": "form_input",
-            "label": "cloanterm"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cloantermmonth"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cinterestrate"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c2loanamount"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c2loanterm"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c2loantermmonth"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c2interestrate"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c3loanamount"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c3loanterm"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c3loantermmonth"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "c3interestrate"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "calcSearchTerm"
-          }
-        ],
-        "dropdowns": [
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "ccompound"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cpayback"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "c2compound"
-          },
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "c3compound"
+            "label": "Your email"
           }
         ],
         "buttons": [
           {
-            "type": "input",
+            "type": "button",
             "role": "action",
-            "label": "x"
+            "label": "Create Account"
           },
           {
-            "type": "input",
+            "type": "button",
             "role": "action",
-            "label": "Clear"
-          },
-          {
-            "type": "span",
-            "role": "action",
-            "label": "Search"
-          }
-        ],
-        "other_clickables": [
-          {
-            "type": "img",
-            "role": "other",
-            "label": "Save this calculation"
+            "label": "Dismiss"
           }
         ]
       }
     },
     {
       "page_context": {
-        "url": "https://www.calculator.net/auto-loan-calculator.html",
-        "title": "Auto Loan Calculator",
-        "domain": "www.calculator.net",
-        "page_path": "/auto-loan-calculator.html",
-        "page_type": "form-heavy",
-        "interaction_score": 36,
-        "ui_density": 62
+        "url": "https://grand-occasion-pro.lovable.app/about",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/about",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 30
       },
       "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
         "links": [
           {
             "type": "a",
             "role": "navigation",
-            "label": "sign in",
-            "href": "https://www.calculator.net/my-account/sign-in.php"
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "home",
-            "href": "https://www.calculator.net/"
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "financial",
-            "href": "https://www.calculator.net/financial-calculator.html"
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "auto loan calculator",
-            "href": "https://www.calculator.net/auto-loan-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Cash Back or Low Interest Calculator",
-            "href": "https://www.calculator.net/cash-back-or-low-interest-calculator.html"
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Auto Lease Calculator",
-            "href": "https://www.calculator.net/auto-lease-calculator.html"
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Mortgage",
-            "href": "https://www.calculator.net/mortgage-calculator.html"
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Loan",
-            "href": "https://www.calculator.net/loan-calculator.html"
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Interest",
-            "href": "https://www.calculator.net/interest-calculator.html"
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Payment",
-            "href": "https://www.calculator.net/payment-calculator.html"
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Retirement",
-            "href": "https://www.calculator.net/retirement-calculator.html"
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Amortization",
-            "href": "https://www.calculator.net/amortization-calculator.html"
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Investment",
-            "href": "https://www.calculator.net/investment-calculator.html"
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Currency",
-            "href": "https://www.calculator.net/currency-calculator.html"
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Inflation",
-            "href": "https://www.calculator.net/inflation-calculator.html"
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Finance",
-            "href": "https://www.calculator.net/finance-calculator.html"
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Mortgage Payoff",
-            "href": "https://www.calculator.net/mortgage-payoff-calculator.html"
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Income Tax",
-            "href": "https://www.calculator.net/tax-calculator.html"
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
           },
           {
             "type": "a",
             "role": "navigation",
-            "label": "Compound Interest",
-            "href": "https://www.calculator.net/compound-interest-calculator.html"
-          },
-          {
-            "type": "a",
-            "role": "navigation",
-            "label": "Salary",
-            "href": "https://www.calculator.net/salary-calculator.html"
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
           }
         ],
         "inputs": [
           {
             "type": "input",
             "role": "form_input",
-            "label": "csaleprice"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cloanterm"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cinterestrate"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cincentive"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "cdownpayment"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "ctradeinvalue"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "ctradeinowned"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "csaletax"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "ctitlereg"
-          },
-          {
-            "type": "input",
-            "role": "form_input",
-            "label": "calcSearchTerm"
-          }
-        ],
-        "dropdowns": [
-          {
-            "type": "select",
-            "role": "dropdown",
-            "label": "cstate"
-          }
-        ],
-        "other_clickables": [
-          {
-            "type": "label",
-            "role": "form_label",
-            "label": "Include taxes and fees in loan"
-          },
-          {
-            "type": "img",
-            "role": "other",
-            "label": "Save this calculation"
+            "label": "Your email"
           }
         ],
         "buttons": [
           {
-            "type": "input",
+            "type": "button",
             "role": "action",
-            "label": "x"
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 33
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
           },
           {
-            "type": "span",
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings\nYour dream wedding, brought to life with elegance and precision. From v",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events\nElevate your brand with professionally managed corporate events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties\nFrom children's themed parties to milestone celebrations, we cr",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
             "role": "action",
-            "label": "Search"
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services/weddings",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services/weddings",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 31
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services/corporate",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services/corporate",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 31
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services/birthdays",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services/birthdays",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 31
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services/concerts",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services/concerts",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 31
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Dismiss"
+          }
+        ]
+      }
+    },
+    {
+      "page_context": {
+        "url": "https://grand-occasion-pro.lovable.app/services/private",
+        "title": "ElegantEvents - Premium Event Management",
+        "domain": "grand-occasion-pro.lovable.app",
+        "page_path": "/services/private",
+        "page_type": "navigation-heavy",
+        "interaction_score": 5,
+        "ui_density": 31
+      },
+      "ui_inventory": {
+        "other_clickables": [
+          {
+            "type": "div",
+            "role": "other",
+            "label": "Notifications (F8)"
+          }
+        ],
+        "links": [
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Login",
+            "href": "https://grand-occasion-pro.lovable.app/login"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Register",
+            "href": "https://grand-occasion-pro.lovable.app/register"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "ElegantEvents",
+            "href": "https://grand-occasion-pro.lovable.app/"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Services",
+            "href": "https://grand-occasion-pro.lovable.app/services"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Events",
+            "href": "https://grand-occasion-pro.lovable.app/events"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Gallery",
+            "href": "https://grand-occasion-pro.lovable.app/gallery"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Pricing",
+            "href": "https://grand-occasion-pro.lovable.app/pricing"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Blog",
+            "href": "https://grand-occasion-pro.lovable.app/blog"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Testimonials",
+            "href": "https://grand-occasion-pro.lovable.app/testimonials"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "FAQ",
+            "href": "https://grand-occasion-pro.lovable.app/faq"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Contact",
+            "href": "https://grand-occasion-pro.lovable.app/contact"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Book an Event",
+            "href": "https://grand-occasion-pro.lovable.app/book-event"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "About Us",
+            "href": "https://grand-occasion-pro.lovable.app/about-us"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Weddings",
+            "href": "https://grand-occasion-pro.lovable.app/services/weddings"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Corporate Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/corporate"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Birthday Parties",
+            "href": "https://grand-occasion-pro.lovable.app/services/birthdays"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Concerts",
+            "href": "https://grand-occasion-pro.lovable.app/services/concerts"
+          },
+          {
+            "type": "a",
+            "role": "navigation",
+            "label": "Private Events",
+            "href": "https://grand-occasion-pro.lovable.app/services/private"
+          }
+        ],
+        "inputs": [
+          {
+            "type": "input",
+            "role": "form_input",
+            "label": "Your email"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "button",
+            "role": "action",
+            "label": "Dismiss"
           }
         ]
       }

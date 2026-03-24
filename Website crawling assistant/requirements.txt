@@ -1,6 +1,12 @@
 playwright
-pandas
-beautifulsoup4
-requests
 selenium
 fpdf2
+python-dotenv
+groq
+fastapi
+uvicorn
+pydantic
+beautifulsoup4
+requests
+pandas
+getgauge

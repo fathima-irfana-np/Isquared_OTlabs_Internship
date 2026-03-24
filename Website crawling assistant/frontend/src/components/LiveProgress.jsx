@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 const PHASES = [
   { id: 'crawl', label: 'Crawl Site' },
   { id: 'process', label: 'Process & Test' },
+  { id: 'execute', label: 'Run Tests' },
   { id: 'report', label: 'Build Report' },
 ]
 

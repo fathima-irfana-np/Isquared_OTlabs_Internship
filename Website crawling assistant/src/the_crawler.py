@@ -11,7 +11,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
 # -------------------------------------------------
 # DRIVER SETUP
 # -------------------------------------------------
@@ -31,6 +30,13 @@ def create_driver():
 # -------------------------------------------------
 
 def get_label(el):
+    # For submit/button inputs, visible text is in 'value' attribute
+    input_type = (el.get_attribute("type") or "").lower()
+    if input_type in ("submit", "button"):
+        val = el.get_attribute("value")
+        if val and val.strip():
+            return val.strip()
+
     for attr in ["aria-label", "placeholder", "name", "title", "data-value"]:
         value = el.get_attribute(attr)
         if value:
@@ -38,13 +44,12 @@ def get_label(el):
 
     text = (el.text or "").strip()
     if text:
-        return text[:80]  # Cap long text content
+        return text[:80]
 
     val = el.get_attribute("value")
     if val:
         return val.strip()
 
-    # Fallback to id attribute
     el_id = el.get_attribute("id")
     if el_id:
         return el_id.strip()

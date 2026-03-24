@@ -16,86 +16,70 @@ import time
 import random
 import requests
 import dotenv
+from pathlib import Path
 
-dotenv.load_dotenv()
+# Load .env from the same directory as this script
+env_path = Path(__file__).parent / ".env"
+dotenv.load_dotenv(dotenv_path=env_path, override=True)
 
 # ── Configuration ──────────────────────────────────────────────
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
-MODEL = "llama-3.3-70b-versatile"  # Layer 1: 70B model for better instruction following
+MODEL = "llama-3.3-70b-versatile"
 
 INPUT_FILE = "data/ai_exploration_snapshot.json"
 OUTPUT_FILE = "data/generated_test_cases.json"
 
-MAX_PROMPT_CHARS = 60000   # 70B model supports 131K tokens (~500K chars)
+MAX_PROMPT_CHARS = 60000
 MAX_TOKENS = 4096
-NUM_BATCHES = 6            # 6 batches × ~10 tests = ~60 raw tests
-BATCH_DELAY_SEC = 45       # Delay between batches for rate limiting
+NUM_BATCHES = 6
+BATCH_DELAY_SEC = 45
 
 
 # ── Layer 2: Page-Grouped Whitelist Extraction ────────────────
 
 def extract_whitelist(snapshot):
-    """
-    Extracts valid labels GROUPED BY PAGE.
-    Each page lists its own inputs and buttons, preventing cross-page mixing.
-    """
     page_vocab = []
-
     for page in snapshot.get("pages", []):
         ctx = page.get("page_context", {})
         path = ctx.get("page_path") or ctx.get("url", "")
         if not path:
             continue
-
         inventory = page.get("ui_inventory", {})
         inputs = []
         buttons = []
-
         for el in inventory.get("inputs", []):
             label = el.get("label", "")
             if label and label not in ("unnamed", "unnamed_element", ""):
                 inputs.append(label)
-
         for el in inventory.get("buttons", []):
             label = el.get("label", "")
             if label and label not in ("unnamed", "unnamed_element", ""):
                 buttons.append(label)
-
-        # Only include pages with interactive elements
         if inputs or buttons:
             page_vocab.append({
                 "page": path,
                 "inputs": sorted(set(inputs)),
                 "buttons": sorted(set(buttons)),
             })
-
     return page_vocab
 
 
 def build_snapshot_context(snapshot):
-    """
-    Builds a compact, AI-friendly representation of the snapshot.
-    Generic: works with any site structure.
-    """
     pages_summary = []
     for page in snapshot.get("pages", []):
         ctx = page.get("page_context", {})
         inventory = page.get("ui_inventory", {})
-
-        # Only include pages with interactive elements
         inputs = inventory.get("inputs", [])
         buttons = inventory.get("buttons", [])
         if not inputs and not buttons:
             continue
-
         page_info = {
             "path": ctx.get("page_path") or ctx.get("url"),
             "title": ctx.get("title", ""),
             "inputs": [],
             "buttons": []
         }
-
         for el in inputs:
             entry = {"label": el.get("label")}
             val = el.get("validation", {})
@@ -103,17 +87,12 @@ def build_snapshot_context(snapshot):
             if clean_val:
                 entry["validation"] = clean_val
             page_info["inputs"].append(entry)
-
         for el in buttons:
             page_info["buttons"].append({"label": el.get("label")})
-
         pages_summary.append(page_info)
-
     return pages_summary
 
 
-# Each batch is assigned a distinct adversarial exploration category.
-# This guarantees structural diversity across all batches — not just topical variation.
 BATCH_FOCUSES = [
     {
         "name": "Input Torture & Field Poisoning",
@@ -124,18 +103,23 @@ BATCH_FOCUSES = [
             "- Exceeding min/max limits by 1 step (e.g. max+1, min-1)\n"
             "- Cross-field contamination: fill one field, copy into another with extra chars\n"
             "- Empty or whitespace-only required fields before submitting\n"
-            "DO NOT repeat negative input tests. Focus on DIFFERENT fields each test."
+            "DO NOT repeat negative input tests. Focus on DIFFERENT fields each test.\n"
+            "Expected outcomes must be error messages or validation failures ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing."
         )
     },
     {
-        "name": "State Transitions & Form Abandonment",
+        "name": "State Transitions & Form Submission",
         "brief": (
-            "Test how the app handles partial or interrupted user flows:\n"
-            "- Fill 50-80%  of a form then navigate away via a link, then return\n"
-            "- Fill all fields, click Calculate, then modify a single field and recalculate (does output update?)\n"
-            "- Navigate forward to result, hit browser back, check if form resets or retains values\n"
-            "- Change a value mid-form without submitting, navigate away, return (state persistence?)\n"
-            "- Submit, see result, then change inputs without clearing result first"
+            "Test how the app handles form submission edge cases:\n"
+            "- Fill all fields, click Calculate/Submit, then modify a single field and recalculate\n"
+            "- Submit with valid data, then immediately submit again without changing values\n"
+            "- Fill a form partially and submit — expect validation error for missing fields\n"
+            "- Submit, see result, then change inputs and recalculate — does output update?\n"
+            "- Submit with one field empty at a time to find which fields are required\n"
+            "Focus on SUBMISSION BEHAVIOR and VALIDATION RESPONSES only.\n"
+            "Expected outcomes must be error messages or validation failures ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing after navigation."
         )
     },
     {
@@ -149,19 +133,23 @@ BATCH_FOCUSES = [
             "- Zero where non-zero is expected\n"
             "- A very large number (e.g. 9999999999)\n"
             "- A very small decimal (e.g. 0.0001)\n"
-            "Each test case should target a DIFFERENT input field."
+            "Each test case should target a DIFFERENT input field.\n"
+            "Expected outcomes must be error messages or invalid results ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing."
         )
     },
     {
-        "name": "Multi-Step Interaction & Navigation Chaos",
+        "name": "Multi-Step Form Interactions",
         "brief": (
-            "Test complex navigation sequences:\n"
-            "- Navigate to page A, fill form, navigate to page B, navigate back to A (are values retained?)\n"
-            "- Navigate to page A, change mode/tab to page B, return to A via breadcrumb\n"
-            "- Open the same calculator twice in sequence and verify independent operation\n"
-            "- Fill inputs on page A, use a navigation link to jump to a related page mid-flow\n"
-            "- Use a link in the header/footer to interrupt an in-progress calculation\n"
-            "Each test MUST involve navigating between at least 2 different pages."
+            "Test complex multi-step interactions on a single page:\n"
+            "- Fill inputs, submit, immediately submit again without changing values\n"
+            "- Fill inputs rapidly in quick succession then submit\n"
+            "- Click submit multiple times rapidly — check for duplicate submissions\n"
+            "- Fill form, clear it using the clear/reset button, fill again with different values, submit\n"
+            "- Fill required fields, leave optional fields empty, submit\n"
+            "All tests must stay on ONE page — do not navigate between pages.\n"
+            "Expected outcomes must be error messages or validation responses ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing after navigation."
         )
     },
     {
@@ -169,11 +157,13 @@ BATCH_FOCUSES = [
         "brief": (
             "Stress-test toggle/mode buttons and UI state changes:\n"
             "- Switch between two calculation modes on the same page\n"
-            "- Enter values in mode A, switch to mode B, switch back (are values retained?)\n"
             "- Click a toggle/tab before all fields are filled, then fill and submit\n"
             "- Rapidly apply and unapply a mode, check for UI flicker or race conditions\n"
-            "- Click a mode button that changes labels — do old values still map to new labels?\n"
-            "Only test pages that have multiple tabs, toggles, or mode switches."
+            "- Click a mode button multiple times in rapid succession\n"
+            "- Click a mode button that changes labels — submit with new labels\n"
+            "Only test pages that have multiple tabs, toggles, or mode switches.\n"
+            "Expected outcomes must be error messages, no UI errors, or validation failures ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing."
         )
     },
     {
@@ -184,19 +174,16 @@ BATCH_FOCUSES = [
             "- Submit with invalid value, correct it, submit again — does error clear properly?\n"
             "- Trigger a calculation error (e.g. divide by zero scenario), then provide valid input\n"
             "- Clear all fields after a successful calculation, submit empty\n"
-            "- Enter valid data, click Clear/Reset, verify all fields and result are cleared\n"
-            "Focus on the APP'S RESPONSE TO RECOVERY, not just the initial bad input."
+            "- Enter valid data, click Clear/Reset, verify all fields cleared, submit empty\n"
+            "Focus on the APP'S RESPONSE TO RECOVERY, not just the initial bad input.\n"
+            "Expected outcomes must be error messages or error clearance ONLY.\n"
+            "Do NOT write expected outcomes about field retention or clearing after navigation."
         )
     },
 ]
 
 
 def build_prompt(snapshot, batch_index, total_batches):
-    """
-    Builds a category-driven adversarial prompt.
-    Each batch targets a distinct exploration focus for structural diversity.
-    Generic: no site-specific terminology.
-    """
     page_vocab = extract_whitelist(snapshot)
     context = build_snapshot_context(snapshot)
     context_text = json.dumps(context, indent=1)
@@ -204,10 +191,8 @@ def build_prompt(snapshot, batch_index, total_batches):
     if len(context_text) > MAX_PROMPT_CHARS:
         context_text = context_text[:MAX_PROMPT_CHARS]
 
-    # Rotate through exploration categories
     focus = BATCH_FOCUSES[batch_index % len(BATCH_FOCUSES)]
 
-    # Format whitelist as PAGE-GROUPED constraint block
     wl_lines = ["PAGE-SPECIFIC VOCABULARY (ONLY use elements listed under the page you navigate to):"]
     for pv in page_vocab:
         wl_lines.append(f"  Page '{pv['page']}':")
@@ -232,6 +217,13 @@ def build_prompt(snapshot, batch_index, total_batches):
         "3. Generate exactly 8-10 test cases. Each must be unique in goal AND step sequence.\n"
         "4. Each test must have 3-6 concrete, executable steps.\n"
         "5. Do NOT repeat tests from other batches. No password/login tests unless site has auth pages.\n"
+        "6. NEVER write expected outcomes about field retention or clearing after navigation.\n"
+        "   BANNED: 'fields retain values', 'fields are cleared', 'field is empty after navigation',\n"
+        "           'values are preserved', 'state is maintained', 'form is reset after navigation'.\n"
+        "   ALLOWED: error messages, validation failures, crashes, UI errors, no UI errors.\n"
+        "7. For SEARCH fields (button labeled 'Search'), expected outcome must be:\n"
+        "   'No UI errors or crashes' or 'No results found'\n"
+        "   NEVER expect 'error message' or 'validation failure' from a search field.\n"
         "\n"
         f"=== THIS BATCH FOCUS: {focus['name']} ===\n"
         f"{focus['brief']}\n"
@@ -248,7 +240,7 @@ def build_prompt(snapshot, batch_index, total_batches):
         f'      "id": "ET-{start_id:02d}",\n'
         '      "goal": "one-line adversarial goal",\n'
         '      "steps": ["Navigate to \'/path\'", "Enter \'value\' into \'exact_label\'", "Click \'exact_label\'"],\n'
-        '      "expected": "precise observable outcome"\n'
+        '      "expected": "error message or validation failure"\n'
         "    }\n"
         "  ]\n"
         "}"
@@ -258,27 +250,20 @@ def build_prompt(snapshot, batch_index, total_batches):
 # ── API Layer with Resilience ──────────────────────────────────
 
 def repair_json(json_str):
-    """Repairs common AI JSON output issues."""
     json_str = json_str.strip()
-
-    # Strip markdown fences
     if json_str.startswith("```"):
         json_str = re.sub(r'^```(?:json)?\s*|\s*```$', '', json_str, flags=re.MULTILINE)
-
-    # Fix unclosed brackets using stack
     stack = []
     for ch in json_str:
-        if ch == '{': stack.append('}')
+        if ch == '{':   stack.append('}')
         elif ch == '[': stack.append(']')
         elif ch in '}]' and stack and stack[-1] == ch:
             stack.pop()
     json_str += "".join(reversed(stack))
-
     return json_str
 
 
 def call_groq(prompt, retries=5, base_delay=10):
-    """Calls Groq API with exponential backoff for rate limits."""
     headers = {
         "Authorization": f"Bearer {GROQ_API_KEY}",
         "Content-Type": "application/json"
@@ -289,7 +274,7 @@ def call_groq(prompt, retries=5, base_delay=10):
             {"role": "system", "content": "You are a test case generator. Output ONLY valid JSON. No markdown, no explanations."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.4,  # Slight creativity for diverse batches
+        "temperature": 0.4,
         "max_tokens": MAX_TOKENS
     }
 
@@ -302,16 +287,16 @@ def call_groq(prompt, retries=5, base_delay=10):
 
             elif response.status_code == 429:
                 wait = (base_delay * (2 ** attempt)) + random.uniform(1, 3)
-                print(f"   ⏳ Rate limit hit. Waiting {wait:.0f}s... (attempt {attempt + 1}/{retries})")
+                print(f"   Rate limit hit. Waiting {wait:.0f}s... (attempt {attempt + 1}/{retries})")
                 time.sleep(wait)
                 continue
 
             else:
-                print(f"   ❌ API Error {response.status_code}: {response.text[:200]}")
+                print(f"   API Error {response.status_code}: {response.text[:200]}")
                 response.raise_for_status()
 
         except requests.exceptions.Timeout:
-            print(f"   ⏳ Timeout. Retrying... (attempt {attempt + 1}/{retries})")
+            print(f"   Timeout. Retrying... (attempt {attempt + 1}/{retries})")
             time.sleep(base_delay)
             continue
 
@@ -319,10 +304,11 @@ def call_groq(prompt, retries=5, base_delay=10):
 
 
 def parse_ai_output(raw_output):
-    """Extracts and parses JSON from AI output."""
+    # Debug: print first 200 chars if parsing fails
     start = raw_output.find("{")
     end = raw_output.rfind("}") + 1
     if start == -1 or end == 0:
+        print(f"   Debug - AI raw output (first 300 chars): {raw_output[:300]}")
         raise ValueError("No JSON object found in AI output")
 
     raw_json = raw_output[start:end]
@@ -338,26 +324,26 @@ def parse_ai_output(raw_output):
 
 def main():
     print("=" * 60)
-    print("🚀 AI Exploratory Test Generator v2.0 (Anti-Hallucination)")
+    print("AI Exploratory Test Generator v2.0 (Anti-Hallucination)")
     print("=" * 60)
 
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ Error: {INPUT_FILE} not found.")
+        print(f"Error: {INPUT_FILE} not found.")
         return
 
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         snapshot = json.load(f)
 
-    # Show whitelist summary
     page_vocab = extract_whitelist(snapshot)
     total_inputs = sum(len(pv["inputs"]) for pv in page_vocab)
     total_buttons = sum(len(pv["buttons"]) for pv in page_vocab)
-    print(f"📋 Whitelist: {len(page_vocab)} pages, {total_inputs} inputs, {total_buttons} buttons (page-grouped)")
+    print(f"Whitelist: {len(page_vocab)} pages, {total_inputs} inputs, {total_buttons} buttons (page-grouped)")
 
     all_tests = []
 
     for batch in range(NUM_BATCHES):
-        print(f"\n── Batch {batch + 1}/{NUM_BATCHES} ──")
+        focus = BATCH_FOCUSES[batch % len(BATCH_FOCUSES)]
+        print(f"\n-- Batch {batch + 1}/{NUM_BATCHES}: {focus['name']} --")
         prompt = build_prompt(snapshot, batch, NUM_BATCHES)
 
         try:
@@ -365,29 +351,26 @@ def main():
             parsed = parse_ai_output(raw_output)
             batch_tests = parsed.get("generated_tests", [])
 
-            # Re-number IDs to avoid duplicates across batches
             for i, test in enumerate(batch_tests):
                 test["id"] = f"ET-{batch * 10 + i + 1:02d}"
 
             all_tests.extend(batch_tests)
-            print(f"   ✅ Got {len(batch_tests)} tests (total: {len(all_tests)})")
+            print(f"   Got {len(batch_tests)} tests (total: {len(all_tests)})")
 
         except Exception as e:
-            print(f"   ❌ Batch {batch + 1} failed: {str(e)}")
+            print(f"   Batch {batch + 1} failed: {str(e)}")
 
-        # Rate limit delay between batches (skip after last batch)
         if batch < NUM_BATCHES - 1:
-            print(f"   ⏳ Waiting {BATCH_DELAY_SEC}s before next batch...")
+            print(f"   Waiting {BATCH_DELAY_SEC}s before next batch...")
             time.sleep(BATCH_DELAY_SEC)
 
-    # Save all generated tests
     output = {"generated_tests": all_tests}
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
 
     print(f"\n{'=' * 60}")
-    print(f"✅ Complete: {len(all_tests)} raw test cases saved to {OUTPUT_FILE}")
-    print(f"📌 Next: Run 'python src/validator.py' to validate against snapshot")
+    print(f"Complete: {len(all_tests)} raw test cases saved to {OUTPUT_FILE}")
+    print(f"Next: Run 'python src/validator.py' to validate against snapshot")
     print(f"{'=' * 60}")
 
 

@@ -1,32 +1,32 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import './index.css'
-import Navbar       from './components/Navbar'
-import Home         from './components/Home'
-import RunForm      from './components/RunForm'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import RunForm from './components/RunForm'
 import LiveProgress from './components/LiveProgress'
-import Dashboard    from './components/Dashboard'
+import Dashboard from './components/Dashboard'
 
 const API = 'http://localhost:8001'
 
 function enrichTests(raw) {
   return (raw || []).map((t, i) => ({
-    id:       t.id || `TC-${String(i + 1).padStart(3, '0')}`,
-    goal:     t.goal || t.description || t.test_goal || 'Untitled',
+    id: t.id || `TC-${String(i + 1).padStart(3, '0')}`,
+    goal: t.goal || t.description || t.test_goal || 'Untitled',
     category: t.category || classifyByGoal(t.goal || ''),
-    steps:    Array.isArray(t.steps) ? t.steps : [],
+    steps: Array.isArray(t.steps) ? t.steps : [],
     expected: t.expected || t.expected_result || '',
-    status:   'pass',
+    status: 'pass',
   }))
 }
 
 const CATS = [
-  ['Boundary',    /boundar|edge.?case|min\b|max\b|limit|overflow/i],
-  ['Negative',    /negative|invalid|inject|script|non.?numeric|special.?char/i],
-  ['Validation',  /validat|error.*message|required|submit.*empty|enforce/i],
-  ['Navigation',  /navigate|cross.?page|switch.*page|back button/i],
-  ['State',       /state|persist|retain|preserve|recalcul/i],
-  ['Auth',        /sign.?in|login|password|auth|credential/i],
-  ['Zero/Empty',  /\b0\b|empty|blank|zero.*input/i],
+  ['Boundary', /boundar|edge.?case|min\b|max\b|limit|overflow/i],
+  ['Negative', /negative|invalid|inject|script|non.?numeric|special.?char/i],
+  ['Validation', /validat|error.*message|required|submit.*empty|enforce/i],
+  ['Navigation', /navigate|cross.?page|switch.*page|back button/i],
+  ['State', /state|persist|retain|preserve|recalcul/i],
+  ['Auth', /sign.?in|login|password|auth|credential/i],
+  ['Zero/Empty', /\b0\b|empty|blank|zero.*input/i],
 ]
 function classifyByGoal(goal) {
   for (const [name, re] of CATS) if (re.test(goal)) return name
@@ -34,7 +34,7 @@ function classifyByGoal(goal) {
 }
 
 async function readSSE(res, onEvt, signal) {
-  const reader  = res.body.getReader()
+  const reader = res.body.getReader()
   const decoder = new TextDecoder()
   let buf = ''
   while (true) {
@@ -47,24 +47,24 @@ async function readSSE(res, onEvt, signal) {
     for (const part of parts) {
       const line = part.trim()
       if (!line.startsWith('data:')) continue
-      try { onEvt(JSON.parse(line.slice(5).trim())) } catch {}
+      try { onEvt(JSON.parse(line.slice(5).trim())) } catch { }
     }
   }
 }
 
 export default function App() {
-  const [url,      setUrl]      = useState('')
-  const [pages,    setPages]    = useState(10)
-  const [running,  setRunning]  = useState(false)
-  const [phase,    setPhase]    = useState('crawl')
-  const [pct,      setPct]      = useState(0)
-  const [logs,     setLogs]     = useState([])
-  const [errMsg,   setErrMsg]   = useState('')
-  const [tests,    setTests]    = useState([])
-  const [meta,     setMeta]     = useState({})
-  const [done,     setDone]     = useState(false)
-  const abortRef     = useRef(null)
-  const consoleRef   = useRef(null)  // ref to scroll into view
+  const [url, setUrl] = useState('')
+  const [pages, setPages] = useState(10)
+  const [running, setRunning] = useState(false)
+  const [phase, setPhase] = useState('crawl')
+  const [pct, setPct] = useState(0)
+  const [logs, setLogs] = useState([])
+  const [errMsg, setErrMsg] = useState('')
+  const [tests, setTests] = useState([])
+  const [meta, setMeta] = useState({})
+  const [done, setDone] = useState(false)
+  const abortRef = useRef(null)
+  const consoleRef = useRef(null)  // ref to scroll into view
   const dashboardRef = useRef(null)  // ref to scroll into view
 
   const pushLog = useCallback((text, type = 'info') =>
@@ -86,7 +86,7 @@ export default function App() {
     }
     return new Promise((resolve, reject) => {
       readSSE(res, evt => {
-        if (evt.type === 'log')   pushLog(evt.text, 'info')
+        if (evt.type === 'log') pushLog(evt.text, 'info')
         if (evt.type === 'phase') pushLog(evt.text, 'ok')
         if (evt.type === 'error') pushLog(evt.text, 'err')
         if (evt.type === 'done') {
@@ -132,21 +132,30 @@ export default function App() {
       setPhase('process')
       setPct(36)
       await runEndpoint('process', {}, ctrl.signal)
-      setPct(75)
+      setPct(55)
       pushLog('✓ Processing complete.', 'ok')
       pushLog('', 'info')
-      await new Promise(r => setTimeout(r, 3000))
 
-      // STEP 3 — REPORT
-      pushSep('STEP 3 — BUILDING PDF REPORT')
+      // STEP 3 — EXECUTE (runs immediately, no delay)
+      pushSep('STEP 3 — EXECUTING GAUGE SPECS')
+      setPhase('execute')
+      setPct(58)
+      await runEndpoint('execute', {}, ctrl.signal)
+      setPct(80)
+      pushLog('✓ Gauge execution complete.', 'ok')
+      pushLog('', 'info')
+      await new Promise(r => setTimeout(r, 2000))
+
+      // STEP 4 — REPORT
+      pushSep('STEP 4 — BUILDING PDF REPORT')
       setPhase('report')
-      setPct(78)
+      setPct(83)
       await runEndpoint('generate-report', {}, ctrl.signal)
       setPct(100)
       pushLog('✓ Report generated.', 'ok')
 
       // fetch results
-      const r    = await fetch(`${API}/api/results`)
+      const r = await fetch(`${API}/api/results`)
       const data = await r.json()
       setTests(enrichTests(data.tests))
       setMeta(data.meta || {})
@@ -156,12 +165,12 @@ export default function App() {
       // scroll to dashboard after short pause
       await new Promise(r => setTimeout(r, 800))
       dashboardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      } catch (e) {
-  if (e.name === 'AbortError') return
-  pushLog(`✗ ${e.message}`, 'err')
-  setErrMsg(e.message)
-  setRunning(false)
-}
+    } catch (e) {
+      if (e.name === 'AbortError') return
+      pushLog(`✗ ${e.message}`, 'err')
+      setErrMsg(e.message)
+      setRunning(false)
+    }
   }, [url, pages, running, runEndpoint, pushLog, pushSep])
 
   const handleReset = () => {
